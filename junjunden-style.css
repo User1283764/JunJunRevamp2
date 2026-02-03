@@ -1,18 +1,22 @@
 /* ==========================
    MAIN DEN BACKGROUND SLAB
-   (Red outlined area)
    ========================== */
 
 #pageContainer {
-    background-color: rgba(6, 12, 18, 0.88) !important; /* deep blue-black */
+    background-color: rgba(6, 12, 18, 0.78) !important; /* slightly more transparent */
     border-radius: 14px;
     padding: 12px;
 }
 
-/* Ensure Bootstrap column doesn't override it */
+/* Prevent inner elements from filling the slab */
+#pageContainer > * {
+    background-color: transparent !important;
+}
+
+/* Reinforce Bootstrap column */
 #pageContainer.col-md-9,
 #pageContainer.col-xs-12 {
-    background-color: rgba(6, 12, 18, 0.88) !important;
+    background-color: rgba(6, 12, 18, 0.78) !important;
 }
 
 /* ==========================
