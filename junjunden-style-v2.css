@@ -1,0 +1,227 @@
+body::after {
+    content: "CSS VERSION TEST";
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    padding: 6px 10px;
+    z-index: 99999;
+    font-size: 12px;
+  }
+
+/* ==========================
+   STORMY MIST JUNGLE THEME
+   Lioden-safe, container-aware
+   ========================== */
+
+/* ---------- Variables ---------- */
+:root {
+    /* Text */
+    --fc1: #e6eef2;
+    --fc2: #9fc3d6;
+    --fc3: #b6d1de;
+
+    /* Deep jungle blue-black */
+    --panel-main: rgba(6, 12, 18, 0.82);
+    --panel-inner: rgba(4, 10, 15, 0.88);
+    --panel-hover: rgba(14, 28, 36, 0.9);
+
+    /* Tables */
+    --table-head: rgba(8, 16, 22, 0.95);
+    --table-row1: rgba(8, 16, 22, 0.9);
+    --table-row2: rgba(14, 28, 36, 0.9);
+
+    /* Borders */
+    --borderColor: rgba(120, 160, 180, 0.25);
+
+    /* Buttons */
+    --button1: #1a2f3a;
+    --buttonHover: #3b6f86;
+    --buttonText: #eaf4f8;
+}
+
+/* ---------- Page Background ---------- */
+html, body {
+    background-color: #000 !important;
+    background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    min-height: 100vh;
+    color: var(--fc1);
+}
+
+/* ---------- Font Override (high specificity) ---------- */
+body,
+.container,
+.container-fluid,
+.panel,
+.well,
+.box {
+    font-family:
+        "Segoe UI",
+        "Trebuchet MS",
+        "Verdana",
+        "Arial Rounded MT Bold",
+        Arial,
+        sans-serif !important;
+}
+
+/* ---------- Mist Overlay ---------- */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(180, 210, 225, 0.08), transparent 45%),
+        radial-gradient(circle at 70% 60%, rgba(140, 190, 215, 0.07), transparent 50%),
+        rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+/* ---------- Keep Content Above Mist ---------- */
+.container,
+.container-fluid,
+.panel,
+.panel-inner,
+.well,
+.box,
+.chat-box,
+.comment-box {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Main Content Rectangles ---------- */
+.container,
+.container-fluid,
+.panel,
+.well,
+.box {
+    background-color: var(--panel-main) !important;
+    color: var(--fc1);
+    border: 1px solid var(--borderColor);
+    border-radius: 8px;
+    backdrop-filter: blur(3px);
+}
+
+/* Inner depth */
+.panel-inner,
+.well .well {
+    background-color: var(--panel-inner) !important;
+}
+
+/* Hover depth */
+.panel:hover,
+.box:hover {
+    background-color: var(--panel-hover) !important;
+}
+
+/* ---------- Topbar / Navbar ---------- */
+.topbar,
+.navbar {
+    background-color: rgba(6, 12, 18, 0.9) !important;
+}
+
+/* ---------- Buttons ---------- */
+button,
+.btn {
+    background: var(--button1);
+    color: var(--buttonText);
+    border: 1px solid var(--borderColor);
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--buttonHover);
+}
+
+/* ---------- Tables ---------- */
+.lion-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--fc1);
+}
+
+.lion-table th {
+    background-color: var(--table-head);
+    color: var(--fc2);
+}
+
+.lion-table td {
+    background-color: var(--table-row1);
+    padding: 6px 10px;
+}
+
+.lion-table tr:nth-child(odd) td {
+    background-color: var(--table-row2);
+}
+
+/* ---------- Alerts ---------- */
+.alert {
+    background-color: var(--panel-inner);
+    border-left: 4px solid #6fa7c2;
+    color: var(--fc1);
+}
+
+/* ---------- Chat ---------- */
+.chat-box {
+    background-color: var(--panel-main);
+    border: 1px solid var(--borderColor);
+}
+
+.chat-box .message {
+    border-bottom: 1px solid var(--borderColor);
+}
+
+/* ---------- Comment Boxes ---------- */
+.comment-box {
+    background-color: var(--panel-inner);
+}
+
+/* ---------- Text Styling ---------- */
+h1, h2, h3, h4, h5 {
+    color: #eaf4f8;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+}
+
+p, li, td {
+    line-height: 1.5;
+}
+
+a {
+    color: var(--fc2);
+}
+
+a:hover {
+    color: #cfe9f5;
+}
+
+/* ---------- Floating Lioden UI Fix ---------- */
+#scrollUp,
+#lioden_button,
+.lioden-button {
+    position: fixed !important;
+    z-index: 10000 !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+    .container,
+    .panel,
+    .chat-box,
+    .lion-table {
+        font-size: 0.95rem;
+    }
+}
