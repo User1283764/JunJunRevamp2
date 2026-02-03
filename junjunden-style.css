@@ -119,5 +119,18 @@ body,
 #topbar {
     background-color: rgba(6, 36, 40, 0.85) !important;
 }
+/* ===== Main Content Backdrop (Light Teal Fix) ===== */
+.container,
+.content,
+#main,
+.col-md-9 {
+    background-color: rgba(6, 36, 40, 0.85) !important;
+    border-radius: 14px;
+}
+
+/* Optional: soften inner spacing so it feels like one panel */
+.container > .content {
+    padding: 12px;
+}
 
 
