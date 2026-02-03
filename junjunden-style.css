@@ -107,3 +107,20 @@ button:hover, .btn:hover {
     border: 1px solid rgba(140, 180, 200, 0.25);
     border-radius: 12px;
 }
+/* ================================
+   FORCE DARK RIGHT SIDEBAR
+   ================================ */
+
+div.col-md-3.col-xs-12.pull-right {
+    background-color: rgba(8, 14, 20, 0.88) !important;
+    border-radius: 18px;
+    padding: 12px;
+}
+
+/* Individual boxes inside sidebar */
+div.col-md-3.col-xs-12.pull-right .panel,
+div.col-md-3.col-xs-12.pull-right .alert {
+    background-color: rgba(12, 20, 28, 0.92) !important;
+    border: 1px solid rgba(120, 160, 180, 0.25);
+    border-radius: 14px;
+}
