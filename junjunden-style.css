@@ -185,4 +185,7 @@ a:hover {
         font-size: 0.95rem;
     }
 }
+body {
+    outline: 3px solid red !important;
+}
 
