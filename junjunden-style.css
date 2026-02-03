@@ -1,25 +1,15 @@
-/* ===============================
-   REMOVE LIODEN TEAL BASE LAYER
-   =============================== */
+/* ==================================
+   STORMY JUNGLE DEN — FINAL BUILD
+   ================================== */
 
-body,
-#content,
-#content > .container,
-#content > .container > .row {
-    background: transparent !important;
-}
-/* ===============================
-   STORMY JUNGLE DEN – CLEAN BUILD
-   =============================== */
-
-/* ---------- Fonts ---------- */
+/* Font */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
 
 body {
     font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
-/* ---------- Background ---------- */
+/* Background image */
 html, body {
     background-color: #000 !important;
     background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
@@ -29,46 +19,38 @@ html, body {
     background-attachment: fixed !important;
 }
 
-/* ---------- Remove default teal slab ---------- */
-#content > .row {
-    background: transparent !important;
+/* FORCE the den content slab */
+#content .container,
+#content .container-fluid,
+#content .row,
+#content .col-md-9,
+#content .col-xs-12 {
+    background-color: rgba(6, 12, 18, 0.88) !important;
 }
 
-/* ---------- Main den panel ---------- */
-#content .col-md-9 {
-    background: rgba(5, 10, 15, 0.72) !important;
-    border-radius: 16px;
-    padding: 20px;
-    backdrop-filter: blur(3px);
+/* Remove inner pale boxes */
+#content .col-md-9 > div,
+#content .col-xs-12 > div {
+    background-color: rgba(6, 12, 18, 0.75) !important;
 }
 
-/* Prevent inner stacking */
-#content .col-md-9 > div {
-    background: transparent !important;
-}
-
-/* ---------- Sidebar untouched ---------- */
-#content .col-md-3 {
-    background: transparent !important;
-}
-
-/* ---------- Panels & alerts ---------- */
+/* Panels */
 .panel,
 .alert,
 .chat-box,
 .comment-box {
-    background: rgba(10, 18, 24, 0.85) !important;
+    background-color: rgba(10, 18, 24, 0.9) !important;
     border: 1px solid rgba(140, 180, 200, 0.25);
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
-/* ---------- Headings ---------- */
+/* Headings */
 h1, h2, h3, h4, h5 {
     color: #e6f1f6 !important;
     font-weight: 500;
 }
 
-/* ---------- Links ---------- */
+/* Links */
 a {
     color: #9fc3d6 !important;
 }
@@ -76,25 +58,25 @@ a:hover {
     color: #d7eef8 !important;
 }
 
-/* ---------- Buttons ---------- */
+/* Buttons */
 button, .btn {
-    background: #1a2f3a !important;
+    background-color: #1a2f3a !important;
     color: #eaf4f8 !important;
     border: 1px solid rgba(120, 160, 180, 0.25);
 }
 button:hover, .btn:hover {
-    background: #2d5568 !important;
+    background-color: #2d5568 !important;
 }
 
-/* ---------- Tables ---------- */
+/* Tables */
 .lion-table th {
-    background: rgba(10, 18, 24, 0.9) !important;
+    background-color: rgba(12, 20, 26, 0.95) !important;
 }
 .lion-table td {
-    background: rgba(8, 14, 18, 0.85) !important;
+    background-color: rgba(8, 14, 18, 0.9) !important;
 }
 
-/* ---------- Ensure header + nav stay above ---------- */
+/* Keep header above */
 .topbar,
 .navbar {
     position: relative;
