@@ -1,4 +1,12 @@
 /* ==========================
+   REMOVE DEN PAGE BACKGROUND
+   ========================== */
+
+#content {
+    background-color: transparent !important;
+}
+
+/* ==========================
    REMOVE TEAL UNDERLAY
    ========================== */
 
