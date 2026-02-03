@@ -1,89 +1,92 @@
-/* deploy ping */
-/* ================================
-   LIODEN DEN – FULL STYLESHEET
-   Dark Jungle Theme
-   ================================ */
+/* ===============================
+   STORMY JUNGLE DEN – CLEAN BUILD
+   =============================== */
 
-/* --- Base page background --- */
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
+
 body {
-    background-color: #050b11;
-    background-image: url("https://i.imgur.com/6YQeZ6C.jpg"); /* optional jungle bg */
-    background-size: cover;
-    background-attachment: fixed;
-    color: #e6f0f0;
-    font-family: "Quicksand", "Trebuchet MS", Arial, sans-serif;
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
-/* --- Remove default teal backgrounds --- */
-#content,
-#content > .row,
-#content .container {
+/* ---------- Background ---------- */
+html, body {
+    background-color: #000 !important;
+    background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+}
+
+/* ---------- Remove default teal slab ---------- */
+#content > .row {
     background: transparent !important;
 }
 
-/* --- MAIN DEN PANEL (the red-outlined area you showed) --- */
+/* ---------- Main den panel ---------- */
 #content .col-md-9 {
-    background: rgba(6, 12, 18, 0.78) !important; /* deep blue-black, semi-transparent */
+    background: rgba(5, 10, 15, 0.72) !important;
     border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
 }
 
-/* --- Prevent inner blocks from stacking colors --- */
-#content .col-md-9 > div,
-#content .col-md-9 table,
-#content .col-md-9 td {
+/* Prevent inner stacking */
+#content .col-md-9 > div {
     background: transparent !important;
 }
 
-/* --- Headers --- */
-h1, h2, h3, h4 {
-    color: #eaf6f4;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-/* --- Text & links --- */
-a {
-    color: #7fcfc3;
-}
-
-a:hover {
-    color: #b6efe6;
-    text-decoration: none;
-}
-
-/* --- Buttons (including Lioden button) --- */
-.btn,
-button,
-input[type="submit"] {
-    background-color: rgba(20, 45, 45, 0.85) !important;
-    color: #eaf6f4 !important;
-    border: none;
-    border-radius: 8px;
-}
-
-.btn:hover,
-button:hover,
-input[type="submit"]:hover {
-    background-color: rgba(40, 80, 80, 0.9) !important;
-}
-
-/* --- Sidebar (leave visible but clean) --- */
+/* ---------- Sidebar untouched ---------- */
 #content .col-md-3 {
     background: transparent !important;
 }
 
-/* --- Notices / alert bars --- */
+/* ---------- Panels & alerts ---------- */
+.panel,
 .alert,
-.notice,
-.message {
-    background: rgba(12, 24, 28, 0.85) !important;
+.chat-box,
+.comment-box {
+    background: rgba(10, 18, 24, 0.85) !important;
+    border: 1px solid rgba(140, 180, 200, 0.25);
     border-radius: 10px;
-    color: #eaf6f4;
 }
 
-/* --- Footer safety --- */
-footer {
-    background: transparent !important;
+/* ---------- Headings ---------- */
+h1, h2, h3, h4, h5 {
+    color: #e6f1f6 !important;
+    font-weight: 500;
+}
+
+/* ---------- Links ---------- */
+a {
+    color: #9fc3d6 !important;
+}
+a:hover {
+    color: #d7eef8 !important;
+}
+
+/* ---------- Buttons ---------- */
+button, .btn {
+    background: #1a2f3a !important;
+    color: #eaf4f8 !important;
+    border: 1px solid rgba(120, 160, 180, 0.25);
+}
+button:hover, .btn:hover {
+    background: #2d5568 !important;
+}
+
+/* ---------- Tables ---------- */
+.lion-table th {
+    background: rgba(10, 18, 24, 0.9) !important;
+}
+.lion-table td {
+    background: rgba(8, 14, 18, 0.85) !important;
+}
+
+/* ---------- Ensure header + nav stay above ---------- */
+.topbar,
+.navbar {
+    position: relative;
+    z-index: 10;
 }
