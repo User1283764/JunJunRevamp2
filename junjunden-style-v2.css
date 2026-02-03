@@ -1,33 +1,18 @@
 /* ==========================
    STORMY MIST JUNGLE THEME
-   FINAL CLEAN VERSION
+   PANEL FIX – Lioden selectors
    ========================== */
 
-/* ---------- Variables ---------- */
+/* ---------- Color variables ---------- */
 :root {
-    /* Text */
-    --fc1: #e6eef2;
-    --fc2: #9fc3d6;
-    --fc3: #b6d1de;
+    --panelDark: rgba(4, 9, 14, 0.88);   /* near-black blue */
+    --panelDarker: rgba(2, 6, 9, 0.95);
+    --panelHover: rgba(14, 28, 36, 0.95);
 
-    /* Deep blue-black panels (near-black, image-matched) */
-    --bgColor: rgba(5, 10, 15, 0.88);
-    --pc1: rgba(4, 8, 12, 0.95);
-    --pc2: rgba(4, 8, 12, 0.95);
-    --pc3: rgba(14, 28, 36, 0.95);
-    --pc4: rgba(6, 14, 20, 0.9);
+    --textMain: #e6eef2;
+    --textAccent: #9fc3d6;
 
-    /* Tables */
-    --sc1: rgba(6, 14, 20, 0.95);
-    --sc3: rgba(14, 28, 36, 0.9);
-    --sc4: rgba(6, 14, 20, 0.9);
-
-    --borderColor: rgba(120, 160, 180, 0.25);
-
-    /* Buttons */
-    --button1: #1a2f3a;
-    --buttonHover: #3b6f86;
-    --buttonText: #eaf4f8;
+    --borderSoft: rgba(120, 160, 180, 0.25);
 }
 
 /* ---------- Background ---------- */
@@ -38,107 +23,87 @@ html, body {
     background-position: center top !important;
     background-size: cover !important;
     background-attachment: fixed !important;
-    min-height: 100vh;
 
-    color: var(--fc1);
-
-    /* Softer jungle-style font (Lioden-safe) */
+    color: var(--textMain);
     font-family: "Candara", "Segoe UI", "Trebuchet MS", Verdana, sans-serif;
 }
 
-/* ---------- Mist Overlay ---------- */
+/* ---------- Mist overlay ---------- */
 body::before {
     content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;
     background:
-        radial-gradient(circle at 30% 20%, rgba(180, 210, 225, 0.07), transparent 45%),
-        radial-gradient(circle at 70% 60%, rgba(140, 190, 215, 0.06), transparent 50%),
-        rgba(0, 0, 0, 0.45);
+        radial-gradient(circle at 30% 20%, rgba(180,210,225,0.07), transparent 45%),
+        radial-gradient(circle at 70% 60%, rgba(140,190,215,0.06), transparent 50%),
+        rgba(0,0,0,0.45);
     z-index: 0;
 }
 
-/* ---------- Ensure UI is ABOVE mist ---------- */
-#main, .container, .panel, .topbar, .navbar,
-button, .btn, input, select, textarea {
+/* ---------- MAIN PANEL FIX ---------- */
+/* These are the big rectangles */
+#main,
+.container,
+.well,
+.card,
+.col-md-9,
+.col-md-3,
+.table,
+.table-bordered,
+.panel,
+.panel-inner,
+.chat-box,
+.comment-box,
+.alert {
+    background-color: var(--panelDark) !important;
+    border: 1px solid var(--borderSoft) !important;
+    border-radius: 10px;
     position: relative;
     z-index: 2;
 }
 
-/* ---------- Panels ---------- */
-.panel,
-.panel-inner,
-.alert,
-.chat-box,
-.comment-box {
-    background-color: var(--bgColor);
-    color: var(--fc1);
-    border: 1px solid var(--borderColor);
-    border-radius: 10px;
+/* Top bars */
+.topbar,
+.navbar {
+    background-color: var(--panelDarker) !important;
 }
 
-/* Topbar & Navbar */
-.topbar { background-color: var(--pc1); }
-.navbar { background-color: var(--pc2); }
-
 /* Hover depth */
-.panel:hover {
-    background-color: var(--pc3);
+.well:hover,
+.panel:hover,
+.card:hover {
+    background-color: var(--panelHover) !important;
+}
+
+/* ---------- Tables ---------- */
+.table th {
+    background-color: var(--panelDarker) !important;
+    color: var(--textAccent);
+}
+
+.table td {
+    background-color: var(--panelDark) !important;
 }
 
 /* ---------- Buttons ---------- */
 button,
 .btn {
-    background: var(--button1);
-    color: var(--buttonText);
-    border: 1px solid var(--borderColor);
+    background: #1a2f3a;
+    color: #eaf4f8;
     border-radius: 8px;
-    padding: 6px 12px;
-    cursor: pointer;
+    border: 1px solid var(--borderSoft);
 }
 
 button:hover,
 .btn:hover {
-    background: var(--buttonHover);
+    background: #3b6f86;
 }
 
-/* ---------- Tables ---------- */
-.lion-table {
-    width: 100%;
-    border-collapse: collapse;
-    color: var(--fc1);
-}
-
-.lion-table th {
-    background-color: var(--sc1);
-    color: var(--fc2);
-}
-
-.lion-table td {
-    background-color: var(--sc4);
-    padding: 6px 10px;
-}
-
-.lion-table tr:nth-child(odd) td {
-    background-color: var(--sc3);
-}
-
-/* ---------- Alerts ---------- */
-.alert {
-    background-color: var(--pc4);
-    border-left: 4px solid #6fa7c2;
-}
-
-/* ---------- Text ---------- */
-h1, h2, h3, h4, h5 {
-    color: #eaf4f8;
-}
-
+/* ---------- Links ---------- */
 a {
-    color: var(--fc2);
+    color: var(--textAccent);
 }
-
 a:hover {
     color: #cfe9f5;
 }
