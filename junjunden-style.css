@@ -1,126 +1,146 @@
-/* ==================================
-   STORMY JUNGLE DEN — MASK METHOD
-   ================================== */
+/*
+Layout originally by Chris (#105465)
+Modified jungle storm version
+*/
 
-/* Soft jungle font */
+/* ================= FONT ================= */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
 
+/* ================= VARIABLES ================= */
+:root {
+    --fc1: #e6eef2;
+    --fc2: #9fc3d6;
+    --fc3: #b6d1de;
+
+    --mainFont: 'Quicksand', Arial, sans-serif;
+    --headFont: 'Quicksand', Arial, sans-serif;
+
+    /* DEEP BLUE TRANSLUCENT PANELS */
+    --bgColor: rgba(6, 12, 18, 0.82);
+    --pc1: rgba(8, 16, 22, 0.9);
+    --pc2: rgba(10, 18, 26, 0.9);
+    --pc3: rgba(14, 26, 34, 0.9);
+    --pc4: rgba(10, 18, 26, 0.9);
+
+    --sc1: rgba(12, 22, 30, 0.95);
+    --sc2: rgba(18, 30, 38, 0.9);
+    --sc3: rgba(20, 34, 44, 0.9);
+    --sc4: rgba(12, 22, 30, 0.9);
+
+    --borderColor: rgba(140, 180, 200, 0.25);
+
+    --button1: #1a2f3a;
+    --button2: #244552;
+    --buttonText: #eaf4f8;
+}
+
+/* ================= BODY ================= */
 body {
-    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--mainFont);
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('https://static.lioden.com/images/dynamic/backgrounds/elephantear.png')
+        fixed center top / cover no-repeat;
+    color: var(--fc1);
 }
 
-/* Background image */
-html, body {
-    background-color: #000 !important;
-    background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
-    background-repeat: no-repeat !important;
-    background-position: center top !important;
-    background-size: cover !important;
-    background-attachment: fixed !important;
-}
-
-/* ================================
-   TEAL SLAB VISUAL CANCELLATION
-   ================================ */
-
-/* Target the den content area */
-#pageContainer {
+/* ================= MAIN PANEL (THIS IS THE KEY FIX) ================= */
+.main {
+    background: var(--bgColor) !important;
+    border-radius: 12px;
+    border: 1px solid var(--borderColor);
+    box-shadow: none;
     position: relative;
     z-index: 1;
 }
 
-/* Dark overlay INSIDE the teal slab */
-#pageContainer::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(6, 12, 18, 0.82);
-    backdrop-filter: blur(3px);
-    border-radius: 16px;
-    z-index: 0;
-    pointer-events: none;
+/* REMOVE TEAL SOURCES */
+.col-md-9,
+.sidebar.col-md-3 {
+    background: none !important;
 }
 
-/* Keep all real content above the overlay */
-#pageContainer > * {
-    position: relative;
-    z-index: 1;
+/* ================= TOPBAR & NAV ================= */
+.topbar {
+    background: var(--pc1);
+    border: 1px solid var(--borderColor);
 }
 
-/* ================================
-   INNER PANELS
-   ================================ */
+.navbar {
+    background: var(--pc2);
+    border-bottom: 1px solid var(--borderColor);
+}
 
+/* ================= PANELS ================= */
 .panel,
 .alert,
 .chat-box,
 .comment-box {
-    background-color: rgba(10, 18, 24, 0.9) !important;
-    border: 1px solid rgba(140, 180, 200, 0.25);
-    border-radius: 12px;
+    background: var(--pc4);
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5 {
-    color: #e6f1f6 !important;
-    font-weight: 500;
+/* ================= BUTTONS (STAY ABOVE) ================= */
+button,
+.btn,
+a.button,
+input[type="submit"],
+input[type="button"] {
+    background: var(--button1);
+    color: var(--buttonText);
+    border: 1px solid var(--borderColor);
+    border-radius: 6px;
+    position: relative;
+    z-index: 5;
 }
 
-/* Links */
+button:hover,
+.btn:hover {
+    background: var(--button2);
+}
+
+/* ================= TABLES ================= */
+.table,
+.lion-table {
+    background: var(--sc4);
+    color: var(--fc1);
+    border: 1px solid var(--borderColor);
+}
+
+.table th,
+.table .top {
+    background: var(--sc1);
+    color: var(--fc2);
+}
+
+/* ================= LINKS ================= */
 a {
-    color: #9fc3d6 !important;
+    color: var(--fc2);
 }
 a:hover {
-    color: #d7eef8 !important;
+    color: #cfe9f5;
 }
 
-/* Buttons */
-button, .btn {
-    background-color: #1a2f3a !important;
-    color: #eaf4f8 !important;
-    border: 1px solid rgba(120, 160, 180, 0.25);
-}
-button:hover, .btn:hover {
-    background-color: #2d5568 !important;
+/* ================= HEADERS ================= */
+h1, h2, h3, h4, h5 {
+    font-family: var(--headFont);
+    color: #eaf4f8;
 }
 
-/* Keep header clickable */
-.topbar,
-.navbar {
-    position: relative;
-    z-index: 10;
+/* ================= CHAT ================= */
+.s-chat-message:nth-child(even) {
+    background: var(--pc4);
 }
-/* ================================
-   RIGHT SIDEBAR FIX
-   ================================ */
-
-.col-md-3 {
-    background: rgba(6, 12, 18, 0.85) !important;
-    backdrop-filter: blur(3px);
-    border-radius: 16px;
+.s-chat-message:nth-child(odd) {
+    background: var(--pc3);
 }
 
-/* Sidebar panels */
-.col-md-3 .panel,
-.col-md-3 .alert {
-    background: rgba(10, 18, 24, 0.9) !important;
-    border: 1px solid rgba(140, 180, 200, 0.25);
-    border-radius: 12px;
-}
-/* ================================
-   FORCE DARK RIGHT SIDEBAR
-   ================================ */
-
-div.col-md-3.col-xs-12.pull-right {
-    background-color: rgba(8, 14, 20, 0.88) !important;
-    border-radius: 18px;
-    padding: 12px;
-}
-
-/* Individual boxes inside sidebar */
-div.col-md-3.col-xs-12.pull-right .panel,
-div.col-md-3.col-xs-12.pull-right .alert {
-    background-color: rgba(12, 20, 28, 0.92) !important;
-    border: 1px solid rgba(120, 160, 180, 0.25);
-    border-radius: 14px;
+/* ================= FOOTER ================= */
+.footer {
+    background: var(--bgColor);
+    border-radius: 10px;
+    border: 1px solid var(--borderColor);
 }
