@@ -90,3 +90,20 @@ button:hover, .btn:hover {
     position: relative;
     z-index: 10;
 }
+/* ================================
+   RIGHT SIDEBAR FIX
+   ================================ */
+
+.col-md-3 {
+    background: rgba(6, 12, 18, 0.85) !important;
+    backdrop-filter: blur(3px);
+    border-radius: 16px;
+}
+
+/* Sidebar panels */
+.col-md-3 .panel,
+.col-md-3 .alert {
+    background: rgba(10, 18, 24, 0.9) !important;
+    border: 1px solid rgba(140, 180, 200, 0.25);
+    border-radius: 12px;
+}
