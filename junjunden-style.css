@@ -1,26 +1,26 @@
 /* ==========================
    STORMY MIST JUNGLE THEME
-   Image-matched, mist overlay
+   Deep blue-black panels, mist overlay
    ========================== */
 
 /* ---------- Variables ---------- */
 :root {
-    /* Text Colors (high contrast, soft) */
+    /* Text Colors */
     --fc1: #e6eef2;      /* Main text */
     --fc2: #9fc3d6;      /* Links / accents */
     --fc3: #b6d1de;      /* Subtle text */
 
-    /* Panel Colors (stormy blue-gray) */
-    --bgColor: rgba(10, 20, 26, 0.82);
-    --pc1: rgba(8, 16, 22, 0.9);   /* Topbar */
-    --pc2: rgba(8, 16, 22, 0.9);   /* Navbar */
-    --pc3: rgba(18, 30, 38, 0.9);  /* Hover */
-    --pc4: rgba(12, 22, 28, 0.9);  /* Inner panels */
+    /* Panel Colors (deep jungle blue-black) */
+    --bgColor: rgba(6, 12, 18, 0.82);   /* Main panels */
+    --pc1: rgba(6, 12, 18, 0.9);        /* Topbar */
+    --pc2: rgba(6, 12, 18, 0.9);        /* Navbar */
+    --pc3: rgba(14, 28, 36, 0.9);       /* Hover */
+    --pc4: rgba(8, 16, 22, 0.9);        /* Inner panels */
 
     /* Tables */
-    --sc1: rgba(12, 22, 28, 0.95);
-    --sc3: rgba(18, 30, 38, 0.9);
-    --sc4: rgba(12, 22, 28, 0.9);
+    --sc1: rgba(8, 16, 22, 0.95);
+    --sc3: rgba(14, 28, 36, 0.9);
+    --sc4: rgba(8, 16, 22, 0.9);
 
     /* Borders */
     --borderColor: rgba(120, 160, 180, 0.25);
@@ -42,7 +42,13 @@ html, body {
     background-attachment: fixed !important;
     min-height: 100vh;
     color: var(--fc1);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family:
+        "Segoe UI",
+        "Trebuchet MS",
+        "Verdana",
+        "Arial Rounded MT Bold",
+        Arial,
+        sans-serif;
 }
 
 /* ---------- Mist Overlay ---------- */
@@ -58,18 +64,23 @@ body::before {
     z-index: 0;
 }
 
-/* Keep content above mist */
-body * {
+/* Keep main content above mist (safe version) */
+body > * {
     position: relative;
     z-index: 1;
 }
 
 /* ---------- Panels ---------- */
-.panel, .panel-inner, .alert, .chat-box, .comment-box {
+.panel,
+.panel-inner,
+.alert,
+.chat-box,
+.comment-box {
     background-color: var(--bgColor);
     color: var(--fc1);
     border: 1px solid var(--borderColor);
     border-radius: 8px;
+    backdrop-filter: blur(3px);
 }
 
 /* Topbar & Navbar */
@@ -142,7 +153,8 @@ button:hover, .btn:hover {
 /* ---------- Text Cleanup ---------- */
 h1, h2, h3, h4, h5 {
     color: #eaf4f8;
-    text-shadow: none;
+    letter-spacing: 0.03em;
+    font-weight: 500;
 }
 
 a {
@@ -153,14 +165,24 @@ a:hover {
     color: #cfe9f5;
 }
 
+/* ---------- Lioden Floating Button Fix ---------- */
+#lionden,
+#lioden_button,
+.lioden-button,
+#scrollUp {
+    position: relative !important;
+    z-index: 9999 !important;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
     body {
         background-attachment: scroll;
     }
-    .panel, .chat-box, .lion-table {
+    .panel,
+    .chat-box,
+    .lion-table {
         font-size: 0.95rem;
     }
 }
-
 
