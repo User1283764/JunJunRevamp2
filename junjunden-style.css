@@ -108,4 +108,19 @@ body::before {
     content: none !important;
     background: transparent !important;
 }
+/* ===== GLOBAL DARK OVERLAY (matches background mood) ===== */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 8, 10, 0.55); /* near-black jungle shadow */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Lift all actual page content above the overlay */
+body > * {
+    position: relative;
+    z-index: 2;
+}
 
