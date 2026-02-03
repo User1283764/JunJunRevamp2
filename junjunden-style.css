@@ -188,4 +188,11 @@ a:hover {
 body {
     outline: 3px solid red !important;
 }
+#den,
+#denContent,
+#content,
+.container,
+.container-fluid {
+    outline: 5px solid red !important;
+}
 
