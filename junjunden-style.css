@@ -1,126 +1,88 @@
-/* ==========================
-   REMOVE DEN PAGE BACKGROUND
-   ========================== */
+/* ================================
+   LIODEN DEN – FULL STYLESHEET
+   Dark Jungle Theme
+   ================================ */
 
-#content {
-    background-color: transparent !important;
+/* --- Base page background --- */
+body {
+    background-color: #050b11;
+    background-image: url("https://i.imgur.com/6YQeZ6C.jpg"); /* optional jungle bg */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #e6f0f0;
+    font-family: "Quicksand", "Trebuchet MS", Arial, sans-serif;
 }
 
-/* ==========================
-   REMOVE TEAL UNDERLAY
-   ========================== */
-
-#pageContainer.parent,
-#pageContainer-row,
-#pageContainerWrapper,
-#pageContainer.container,
-#pageContainer.row,
-#pageContainer.col-md-9 {
-    background-color: transparent !important;
+/* --- Remove default teal backgrounds --- */
+#content,
+#content > .row,
+#content .container {
+    background: transparent !important;
 }
 
-/* ==========================
-   MAIN DEN BACKGROUND SLAB
-   ========================== */
-
-#pageContainer {
-    background-color: rgba(6, 12, 18, 0.78) !important; /* slightly more transparent */
-    border-radius: 14px;
-    padding: 12px;
+/* --- MAIN DEN PANEL (the red-outlined area you showed) --- */
+#content .col-md-9 {
+    background: rgba(6, 12, 18, 0.78) !important; /* deep blue-black, semi-transparent */
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
-/* Prevent inner elements from filling the slab */
-#pageContainer > * {
-    background-color: transparent !important;
+/* --- Prevent inner blocks from stacking colors --- */
+#content .col-md-9 > div,
+#content .col-md-9 table,
+#content .col-md-9 td {
+    background: transparent !important;
 }
 
-/* Reinforce Bootstrap column */
-#pageContainer.col-md-9,
-#pageContainer.col-xs-12 {
-    background-color: rgba(6, 12, 18, 0.78) !important;
+/* --- Headers --- */
+h1, h2, h3, h4 {
+    color: #eaf6f4;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
-/* ==========================
-   STORMY MIST JUNGLE – DEN CORE FIX
-   Targets the pale teal slab
-   ========================== */
-
-/* ---------- Background Image ---------- */
-html, body {
-    background-color: #000 !important;
-    background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
-    background-repeat: no-repeat !important;
-    background-position: center top !important;
-    background-size: cover !important;
-    background-attachment: fixed !important;
-
-    color: #e6eef2;
-    font-family: "Candara","Segoe UI","Trebuchet MS",Verdana,sans-serif;
-}
-
-/* ---------- MAIN DEN SLAB (RED OUTLINE AREA) ---------- */
-#main {
-    background-color: rgba(6, 12, 18, 0.88) !important;
-    border-radius: 12px;
-    padding: 12px;
-}
-
-/* ---------- Breadcrumb (Home / Den Name) ---------- */
-.breadcrumb {
-    background-color: rgba(4, 8, 12, 0.9) !important;
-    border: 1px solid rgba(120,160,180,0.25);
-}
-
-/* ---------- ALERT BARS (the pale teal strips) ---------- */
-.alert,
-.alert-info,
-.alert-success,
-.alert-warning {
-    background-color: rgba(8, 16, 22, 0.9) !important;
-    color: #e6eef2 !important;
-    border: 1px solid rgba(120,160,180,0.25) !important;
-}
-
-/* ---------- Inner Panels ---------- */
-.panel,
-.well,
-.panel-inner {
-    background-color: rgba(8, 16, 22, 0.9) !important;
-    border: 1px solid rgba(120,160,180,0.25);
-    border-radius: 10px;
-}
-
-/* ---------- Tables ---------- */
-table {
-    background-color: rgba(8, 16, 22, 0.9) !important;
-    color: #e6eef2;
-}
-
-th {
-    background-color: rgba(4, 8, 12, 0.95) !important;
-    color: #9fc3d6;
-}
-
-/* ---------- Buttons ---------- */
-button,
-.btn,
-input[type="submit"] {
-    background-color: #1a2f3a !important;
-    color: #eaf4f8 !important;
-    border: 1px solid rgba(120,160,180,0.25) !important;
-    border-radius: 8px;
-}
-
-button:hover,
-.btn:hover {
-    background-color: #3b6f86 !important;
-}
-
-/* ---------- Links ---------- */
+/* --- Text & links --- */
 a {
-    color: #9fc3d6;
+    color: #7fcfc3;
 }
 
 a:hover {
-    color: #cfe9f5;
+    color: #b6efe6;
+    text-decoration: none;
+}
+
+/* --- Buttons (including Lioden button) --- */
+.btn,
+button,
+input[type="submit"] {
+    background-color: rgba(20, 45, 45, 0.85) !important;
+    color: #eaf6f4 !important;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+    background-color: rgba(40, 80, 80, 0.9) !important;
+}
+
+/* --- Sidebar (leave visible but clean) --- */
+#content .col-md-3 {
+    background: transparent !important;
+}
+
+/* --- Notices / alert bars --- */
+.alert,
+.notice,
+.message {
+    background: rgba(12, 24, 28, 0.85) !important;
+    border-radius: 10px;
+    color: #eaf6f4;
+}
+
+/* --- Footer safety --- */
+footer {
+    background: transparent !important;
 }
