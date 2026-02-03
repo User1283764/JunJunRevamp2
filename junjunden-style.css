@@ -1,19 +1,24 @@
 /* ==========================
    STORMY MIST JUNGLE THEME
-   CLEAN RESET VERSION
+   CORRECT SELECTORS EDITION
    ========================== */
 
 :root {
     --fc1: #e6eef2;
     --fc2: #9fc3d6;
+    --fc3: #b6d1de;
 
-    --bgColor: rgba(6, 24, 30, 0.85);
-    --panelDark: rgba(6, 28, 34, 0.9);
+    /* Dark teal den panel */
+    --denBg: rgba(6, 36, 40, 0.9);
 
     --borderColor: rgba(120, 160, 180, 0.25);
+
+    --button1: #123840;
+    --buttonHover: #2c6a78;
+    --buttonText: #eaf4f8;
 }
 
-/* ===== Background ===== */
+/* ===== Background (DO NOT TOUCH) ===== */
 html, body {
     background-color: #000 !important;
     background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
@@ -24,23 +29,38 @@ html, body {
 
     min-height: 100vh;
     color: var(--fc1);
-    font-family: "Trebuchet MS", "Verdana", sans-serif;
+
+    /* Softer jungle font */
+    font-family: "Segoe UI", "Trebuchet MS", "Verdana", sans-serif;
 }
 
-/* ===== Main Den Panels ===== */
+/* ===== Force font on all content ===== */
+.container,
+.content,
 .panel,
-.panel-inner,
-.alert,
-.chat-box,
-.comment-box {
-    background-color: var(--bgColor) !important;
-    border: 1px solid var(--borderColor);
-    border-radius: 8px;
+#denContainer {
+    font-family: "Segoe UI", "Trebuchet MS", "Verdana", sans-serif !important;
 }
 
-/* ===== Headers ===== */
-h1, h2, h3, h4 {
+/* ===== MAIN DEN RECTANGLE ===== */
+#denContainer {
+    background-color: var(--denBg) !important;
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid var(--borderColor);
+}
+
+/* ===== Inner panels stay transparent ===== */
+.panel,
+.panel-inner {
+    background-color: transparent !important;
+    border: none;
+}
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5 {
     color: #eaf4f8;
+    letter-spacing: 0.4px;
 }
 
 /* ===== Links ===== */
@@ -52,5 +72,35 @@ a:hover {
     color: #cfe9f5;
 }
 
+/* ===== LIODEN LOGO BUTTON (TOP LEFT) ===== */
+#logo {
+    background-color: rgba(6, 36, 40, 0.95);
+    border-radius: 50%;
+    padding: 6px;
+    position: relative;
+    z-index: 50;
+    top: -6px;
+}
+
+/* Lift above bar */
+#logo img {
+    position: relative;
+    z-index: 51;
+}
+
+/* ===== Buttons ===== */
+button,
+.btn {
+    background: var(--button1);
+    color: var(--buttonText);
+    border: 1px solid var(--borderColor);
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--buttonHover);
+}
 
 
