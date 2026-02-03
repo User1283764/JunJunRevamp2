@@ -1,6 +1,6 @@
-/* ==================================
-   STORMY JUNGLE DEN — FINAL BUILD
-   ================================== */
+/* ===============================
+   LIODEN DEN – DIRECT FIX
+   =============================== */
 
 /* Font */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
@@ -19,19 +19,16 @@ html, body {
     background-attachment: fixed !important;
 }
 
-/* FORCE the den content slab */
-#content .container,
-#content .container-fluid,
-#content .row,
-#content .col-md-9,
-#content .col-xs-12 {
-    background-color: rgba(6, 12, 18, 0.88) !important;
+/* 🔴 THIS IS THE TEAL BOX */
+#pageContainer {
+    background-color: rgba(6, 12, 18, 0.85) !important;
+    border-radius: 16px;
+    padding: 20px;
 }
 
-/* Remove inner pale boxes */
-#content .col-md-9 > div,
-#content .col-xs-12 > div {
-    background-color: rgba(6, 12, 18, 0.75) !important;
+/* Kill inner teal layers */
+#pageContainer > div {
+    background-color: transparent !important;
 }
 
 /* Panels */
@@ -68,15 +65,7 @@ button:hover, .btn:hover {
     background-color: #2d5568 !important;
 }
 
-/* Tables */
-.lion-table th {
-    background-color: rgba(12, 20, 26, 0.95) !important;
-}
-.lion-table td {
-    background-color: rgba(8, 14, 18, 0.9) !important;
-}
-
-/* Keep header above */
+/* Keep header clickable */
 .topbar,
 .navbar {
     position: relative;
