@@ -1,3 +1,15 @@
+body::after {
+    content: "CSS VERSION TEST";
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    padding: 6px 10px;
+    z-index: 99999;
+    font-size: 12px;
+}
+
 /* ==========================
    STORMY MIST JUNGLE THEME
    Lioden-safe, container-aware
