@@ -100,4 +100,12 @@ button:hover,
 .col-md-12 * {
     background-clip: padding-box;
 }
+/* ===== REMOVE LIODEN'S LIGHT TEAL OVERLAY ===== */
+.container::before,
+.container-fluid::before,
+#main::before,
+body::before {
+    content: none !important;
+    background: transparent !important;
+}
 
