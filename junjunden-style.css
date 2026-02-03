@@ -1,23 +1,38 @@
 /* ==========================
-   STORM JUNGLE — FINAL CLEAN
+   STORMY MIST JUNGLE THEME
+   Image-matched, mist overlay
    ========================== */
 
-/* Soft jungle font */
-@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600&display=swap');
-
+/* ---------- Variables ---------- */
 :root {
-    /* Text */
-    --text-main: #dfe9ee;
-    --text-soft: #a8c3cc;
+    /* Text Colors (high contrast, soft) */
+    --fc1: #e6eef2;      /* Main text */
+    --fc2: #9fc3d6;      /* Links / accents */
+    --fc3: #b6d1de;      /* Subtle text */
 
-    /* Near-black jungle panels */
-    --panel-main: rgba(6, 12, 14, 0.65);
-    --panel-inner: rgba(6, 12, 14, 0.45);
+    /* Panel Colors (stormy blue-gray) */
+    --bgColor: rgba(10, 20, 26, 0.82);
+    --pc1: rgba(8, 16, 22, 0.9);   /* Topbar */
+    --pc2: rgba(8, 16, 22, 0.9);   /* Navbar */
+    --pc3: rgba(18, 30, 38, 0.9);  /* Hover */
+    --pc4: rgba(12, 22, 28, 0.9);  /* Inner panels */
 
-    --border-soft: rgba(140, 180, 190, 0.15);
+    /* Tables */
+    --sc1: rgba(12, 22, 28, 0.95);
+    --sc3: rgba(18, 30, 38, 0.9);
+    --sc4: rgba(12, 22, 28, 0.9);
+
+    /* Borders */
+    --borderColor: rgba(120, 160, 180, 0.25);
+
+    /* Buttons */
+    --button1: #1a2f3a;
+    --button2: #244552;
+    --buttonHover: #3b6f86;
+    --buttonText: #eaf4f8;
 }
 
-/* ===== Background (LOCKED — do not touch) ===== */
+/* ---------- Background (forced over Lioden teal) ---------- */
 html, body {
     background-color: #000 !important;
     background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
@@ -25,81 +40,127 @@ html, body {
     background-position: center top !important;
     background-size: cover !important;
     background-attachment: fixed !important;
-
     min-height: 100vh;
-    color: var(--text-main);
-    font-family: 'Mulish', sans-serif !important;
+    color: var(--fc1);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Force font everywhere */
-* {
-    font-family: 'Mulish', sans-serif !important;
-}
-
-/* ===== GLOBAL DARK OVERLAY (more transparent) ===== */
-body::after {
-    content: "";
+/* ---------- Mist Overlay ---------- */
+body::before {
+    content: '';
     position: fixed;
     inset: 0;
-    background: rgba(4, 8, 10, 0.45); /* transparency tuned */
     pointer-events: none;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(180, 210, 225, 0.08), transparent 45%),
+        radial-gradient(circle at 70% 60%, rgba(140, 190, 215, 0.07), transparent 50%),
+        rgba(0, 0, 0, 0.35);
+    z-index: 0;
+}
+
+/* Keep content above mist */
+body * {
+    position: relative;
     z-index: 1;
 }
 
-/* Lift all content above overlay */
-body > * {
-    position: relative;
-    z-index: 2;
+/* ---------- Panels ---------- */
+.panel, .panel-inner, .alert, .chat-box, .comment-box {
+    background-color: var(--bgColor);
+    color: var(--fc1);
+    border: 1px solid var(--borderColor);
+    border-radius: 8px;
 }
 
-/* ===== MAIN CONTENT AREAS ===== */
-.container,
-.content,
-#main,
-.col-md-9,
-#denContainer {
-    background-color: var(--panel-main) !important;
-    border-radius: 14px;
-    border: 1px solid var(--border-soft);
+/* Topbar & Navbar */
+.topbar { background-color: var(--pc1); }
+.navbar { background-color: var(--pc2); }
+
+/* Hover depth */
+.panel:hover {
+    background-color: var(--pc3);
 }
 
-/* ===== Inner panels ===== */
-.panel,
-.panel-inner,
-.alert,
-.chat-box,
+/* ---------- Buttons ---------- */
+button, .btn {
+    background: var(--button1);
+    color: var(--buttonText);
+    border: 1px solid var(--borderColor);
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover, .btn:hover {
+    background: var(--buttonHover);
+}
+
+/* ---------- Tables ---------- */
+.lion-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--fc1);
+}
+
+.lion-table th {
+    background-color: var(--sc1);
+    color: var(--fc2);
+}
+
+.lion-table td {
+    background-color: var(--sc4);
+    padding: 6px 10px;
+}
+
+.lion-table tr:nth-child(odd) td {
+    background-color: var(--sc3);
+}
+
+/* ---------- Alerts ---------- */
+.alert {
+    background-color: var(--pc4);
+    border-left: 4px solid #6fa7c2;
+    color: var(--fc1);
+}
+
+/* ---------- Chat ---------- */
+.chat-box {
+    background-color: var(--bgColor);
+    border: 1px solid var(--borderColor);
+}
+
+.chat-box .message {
+    border-bottom: 1px solid var(--borderColor);
+}
+
+/* ---------- Comment Boxes ---------- */
 .comment-box {
-    background-color: var(--panel-inner) !important;
-    border: 1px solid var(--border-soft);
-    border-radius: 10px;
+    background-color: var(--pc4);
 }
 
-/* ===== Headings ===== */
+/* ---------- Text Cleanup ---------- */
 h1, h2, h3, h4, h5 {
-    color: #eef6f9;
-    letter-spacing: 0.4px;
+    color: #eaf4f8;
+    text-shadow: none;
 }
 
-/* ===== Links ===== */
 a {
-    color: var(--text-soft);
+    color: var(--fc2);
 }
 
 a:hover {
-    color: #e6f2f6;
+    color: #cfe9f5;
 }
 
-/* ===== Buttons ===== */
-button,
-.btn {
-    background-color: rgba(10, 18, 20, 0.75);
-    color: #eaf4f8;
-    border: 1px solid var(--border-soft);
-    border-radius: 6px;
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+    .panel, .chat-box, .lion-table {
+        font-size: 0.95rem;
+    }
 }
 
-button:hover,
-.btn:hover {
-    background-color: rgba(20, 32, 36, 0.85);
-}
 
