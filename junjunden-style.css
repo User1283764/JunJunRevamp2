@@ -1,9 +1,9 @@
 /* ==========================
-   STORMY MIST JUNGLE THEME
-   Lioden Den – External CSS
+   STORMY MIST JUNGLE – DEN CORE FIX
+   Targets the pale teal slab
    ========================== */
 
-/* ---------- Background ---------- */
+/* ---------- Background Image ---------- */
 html, body {
     background-color: #000 !important;
     background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
@@ -11,60 +11,46 @@ html, body {
     background-position: center top !important;
     background-size: cover !important;
     background-attachment: fixed !important;
+
     color: #e6eef2;
     font-family: "Candara","Segoe UI","Trebuchet MS",Verdana,sans-serif;
 }
 
-/* ---------- Mist Overlay ---------- */
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(circle at 30% 20%, rgba(180,210,225,0.08), transparent 45%),
-        radial-gradient(circle at 70% 60%, rgba(140,190,215,0.07), transparent 50%),
-        rgba(0,0,0,0.45);
-    z-index: 0;
-}
-
-/* ---------- FORCE CONTENT ABOVE OVERLAY ---------- */
-#main, #main * {
-    position: relative;
-    z-index: 2;
-}
-
-/* ---------- BIG BACKGROUND RECTANGLES (THE FIX) ---------- */
-#main,
-.container,
-.col-md-9,
-.col-md-3,
-.well,
-.panel,
-.panel-inner,
-.alert,
-.chat-box,
-.comment-box {
+/* ---------- MAIN DEN SLAB (RED OUTLINE AREA) ---------- */
+#main {
     background-color: rgba(6, 12, 18, 0.88) !important;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+/* ---------- Breadcrumb (Home / Den Name) ---------- */
+.breadcrumb {
+    background-color: rgba(4, 8, 12, 0.9) !important;
+    border: 1px solid rgba(120,160,180,0.25);
+}
+
+/* ---------- ALERT BARS (the pale teal strips) ---------- */
+.alert,
+.alert-info,
+.alert-success,
+.alert-warning {
+    background-color: rgba(8, 16, 22, 0.9) !important;
+    color: #e6eef2 !important;
     border: 1px solid rgba(120,160,180,0.25) !important;
+}
+
+/* ---------- Inner Panels ---------- */
+.panel,
+.well,
+.panel-inner {
+    background-color: rgba(8, 16, 22, 0.9) !important;
+    border: 1px solid rgba(120,160,180,0.25);
     border-radius: 10px;
-}
-
-/* ---------- Top Navigation ---------- */
-.topbar,
-.navbar {
-    background-color: rgba(4, 8, 12, 0.95) !important;
-}
-
-/* ---------- Hover Depth ---------- */
-.panel:hover,
-.well:hover {
-    background-color: rgba(14, 28, 36, 0.95) !important;
 }
 
 /* ---------- Tables ---------- */
 table {
-    background-color: rgba(6, 12, 18, 0.88) !important;
+    background-color: rgba(8, 16, 22, 0.9) !important;
     color: #e6eef2;
 }
 
@@ -73,19 +59,18 @@ th {
     color: #9fc3d6;
 }
 
-td {
-    background-color: transparent !important;
-}
-
 /* ---------- Buttons ---------- */
-button, .btn, input[type="submit"] {
+button,
+.btn,
+input[type="submit"] {
     background-color: #1a2f3a !important;
     color: #eaf4f8 !important;
     border: 1px solid rgba(120,160,180,0.25) !important;
     border-radius: 8px;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
     background-color: #3b6f86 !important;
 }
 
