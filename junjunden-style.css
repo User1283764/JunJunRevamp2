@@ -102,5 +102,22 @@ button:hover,
 .btn:hover {
     background: var(--buttonHover);
 }
+/* ===== Google Jungle Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600&display=swap');
+
+/* Force font everywhere */
+body,
+.container,
+.content,
+#denContainer,
+.panel {
+    font-family: 'Mulish', sans-serif !important;
+}
+
+/* ===== Soften header bar behind logo ===== */
+#header,
+#topbar {
+    background-color: rgba(6, 36, 40, 0.85) !important;
+}
 
 
