@@ -1,38 +1,41 @@
 /* ==========================
    STORMY MIST JUNGLE THEME
-   Image-matched, mist overlay
+   Full Integrated Version
    ========================== */
+
+/* ---------- Font ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
 
 /* ---------- Variables ---------- */
 :root {
-    /* Text Colors (high contrast, soft) */
-    --fc1: #e6eef2;      /* Main text */
-    --fc2: #9fc3d6;      /* Links / accents */
-    --fc3: #b6d1de;      /* Subtle text */
+    /* Text Colors */
+    --fc1: #e6eef2;
+    --fc2: #9fc3d6;
+    --fc3: #b6d1de;
 
-    /* Panel Colors (stormy blue-gray) */
-    --bgColor: rgba(10, 20, 26, 0.82);
-    --pc1: rgba(8, 16, 22, 0.9);   /* Topbar */
-    --pc2: rgba(8, 16, 22, 0.9);   /* Navbar */
-    --pc3: rgba(18, 30, 38, 0.9);  /* Hover */
-    --pc4: rgba(12, 22, 28, 0.9);  /* Inner panels */
+    /* Panel Colors */
+    --bgColor: rgba(6, 28, 34, 0.72);
+    --pc1: rgba(8, 20, 26, 0.9);
+    --pc2: rgba(8, 20, 26, 0.9);
+    --pc3: rgba(18, 40, 46, 0.9);
+    --pc4: rgba(10, 32, 38, 0.9);
 
     /* Tables */
-    --sc1: rgba(12, 22, 28, 0.95);
-    --sc3: rgba(18, 30, 38, 0.9);
-    --sc4: rgba(12, 22, 28, 0.9);
+    --sc1: rgba(10, 32, 38, 0.95);
+    --sc3: rgba(18, 40, 46, 0.9);
+    --sc4: rgba(10, 32, 38, 0.9);
 
     /* Borders */
-    --borderColor: rgba(120, 160, 180, 0.25);
+    --borderColor: rgba(120, 170, 190, 0.3);
 
     /* Buttons */
-    --button1: #1a2f3a;
-    --button2: #244552;
-    --buttonHover: #3b6f86;
+    --button1: #14323c;
+    --button2: #1f4b59;
+    --buttonHover: #2f6b7d;
     --buttonText: #eaf4f8;
 }
 
-/* ---------- Background (forced over Lioden teal) ---------- */
+/* ---------- Background ---------- */
 html, body {
     background-color: #000 !important;
     background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
@@ -42,7 +45,7 @@ html, body {
     background-attachment: fixed !important;
     min-height: 100vh;
     color: var(--fc1);
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Quicksand', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* ---------- Mist Overlay ---------- */
@@ -58,10 +61,41 @@ body::before {
     z-index: 0;
 }
 
-/* Keep content above mist */
+/* ---------- Rain Overlay ---------- */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        repeating-linear-gradient(
+            115deg,
+            rgba(200, 230, 240, 0.05) 0px,
+            rgba(200, 230, 240, 0.05) 1px,
+            transparent 1px,
+            transparent 6px
+        );
+    animation: rainFall 12s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rainFall {
+    0% { background-position: 0 0; }
+    100% { background-position: -200px 600px; }
+}
+
+/* Keep content above overlays */
 body * {
     position: relative;
     z-index: 1;
+}
+
+/* ---------- Main Content Rectangle ---------- */
+.container, .content {
+    background-color: rgba(6, 28, 34, 0.75);
+    border: 1px solid rgba(120, 170, 190, 0.3);
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
 }
 
 /* ---------- Panels ---------- */
@@ -96,6 +130,23 @@ button:hover, .btn:hover {
     background: var(--buttonHover);
 }
 
+/* ---------- Lioden Corner Button ---------- */
+#lioden-nav,
+#lioden-nav a {
+    background: linear-gradient(135deg, #1a3a45, #102830) !important;
+    border: 1px solid rgba(140, 190, 210, 0.35);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+#lioden-nav {
+    margin: 8px;
+}
+
+#lioden-nav a:hover {
+    background: linear-gradient(135deg, #2c5c6a, #163a45) !important;
+}
+
 /* ---------- Tables ---------- */
 .lion-table {
     width: 100%;
@@ -121,7 +172,6 @@ button:hover, .btn:hover {
 .alert {
     background-color: var(--pc4);
     border-left: 4px solid #6fa7c2;
-    color: var(--fc1);
 }
 
 /* ---------- Chat ---------- */
@@ -139,10 +189,10 @@ button:hover, .btn:hover {
     background-color: var(--pc4);
 }
 
-/* ---------- Text Cleanup ---------- */
+/* ---------- Text ---------- */
 h1, h2, h3, h4, h5 {
     color: #eaf4f8;
-    text-shadow: none;
+    font-weight: 600;
 }
 
 a {
@@ -158,6 +208,7 @@ a:hover {
     body {
         background-attachment: scroll;
     }
+
     .panel, .chat-box, .lion-table {
         font-size: 0.95rem;
     }
