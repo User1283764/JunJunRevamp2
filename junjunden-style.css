@@ -1,4 +1,21 @@
 /* ==========================
+   MAIN DEN BACKGROUND SLAB
+   (Red outlined area)
+   ========================== */
+
+#pageContainer {
+    background-color: rgba(6, 12, 18, 0.88) !important; /* deep blue-black */
+    border-radius: 14px;
+    padding: 12px;
+}
+
+/* Ensure Bootstrap column doesn't override it */
+#pageContainer.col-md-9,
+#pageContainer.col-xs-12 {
+    background-color: rgba(6, 12, 18, 0.88) !important;
+}
+
+/* ==========================
    STORMY MIST JUNGLE – DEN CORE FIX
    Targets the pale teal slab
    ========================== */
