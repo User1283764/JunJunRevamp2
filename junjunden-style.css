@@ -1,38 +1,35 @@
 /* ==========================
    STORMY MIST JUNGLE THEME
-   Deep blue-black panels, mist overlay
+   Lioden-safe, container-aware
    ========================== */
 
 /* ---------- Variables ---------- */
 :root {
-    /* Text Colors */
-    --fc1: #e6eef2;      /* Main text */
-    --fc2: #9fc3d6;      /* Links / accents */
-    --fc3: #b6d1de;      /* Subtle text */
+    /* Text */
+    --fc1: #e6eef2;
+    --fc2: #9fc3d6;
+    --fc3: #b6d1de;
 
-    /* Panel Colors (deep jungle blue-black) */
-    --bgColor: rgba(6, 12, 18, 0.82);   /* Main panels */
-    --pc1: rgba(6, 12, 18, 0.9);        /* Topbar */
-    --pc2: rgba(6, 12, 18, 0.9);        /* Navbar */
-    --pc3: rgba(14, 28, 36, 0.9);       /* Hover */
-    --pc4: rgba(8, 16, 22, 0.9);        /* Inner panels */
+    /* Deep jungle blue-black */
+    --panel-main: rgba(6, 12, 18, 0.82);
+    --panel-inner: rgba(4, 10, 15, 0.88);
+    --panel-hover: rgba(14, 28, 36, 0.9);
 
     /* Tables */
-    --sc1: rgba(8, 16, 22, 0.95);
-    --sc3: rgba(14, 28, 36, 0.9);
-    --sc4: rgba(8, 16, 22, 0.9);
+    --table-head: rgba(8, 16, 22, 0.95);
+    --table-row1: rgba(8, 16, 22, 0.9);
+    --table-row2: rgba(14, 28, 36, 0.9);
 
     /* Borders */
     --borderColor: rgba(120, 160, 180, 0.25);
 
     /* Buttons */
     --button1: #1a2f3a;
-    --button2: #244552;
     --buttonHover: #3b6f86;
     --buttonText: #eaf4f8;
 }
 
-/* ---------- Background (forced over Lioden teal) ---------- */
+/* ---------- Page Background ---------- */
 html, body {
     background-color: #000 !important;
     background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
@@ -42,13 +39,22 @@ html, body {
     background-attachment: fixed !important;
     min-height: 100vh;
     color: var(--fc1);
+}
+
+/* ---------- Font Override (high specificity) ---------- */
+body,
+.container,
+.container-fluid,
+.panel,
+.well,
+.box {
     font-family:
         "Segoe UI",
         "Trebuchet MS",
         "Verdana",
         "Arial Rounded MT Bold",
         Arial,
-        sans-serif;
+        sans-serif !important;
 }
 
 /* ---------- Mist Overlay ---------- */
@@ -64,36 +70,53 @@ body::before {
     z-index: 0;
 }
 
-/* Keep main content above mist (safe version) */
-body > * {
+/* ---------- Keep Content Above Mist ---------- */
+.container,
+.container-fluid,
+.panel,
+.panel-inner,
+.well,
+.box,
+.chat-box,
+.comment-box {
     position: relative;
     z-index: 1;
 }
 
-/* ---------- Panels ---------- */
+/* ---------- Main Content Rectangles ---------- */
+.container,
+.container-fluid,
 .panel,
-.panel-inner,
-.alert,
-.chat-box,
-.comment-box {
-    background-color: var(--bgColor);
+.well,
+.box {
+    background-color: var(--panel-main) !important;
     color: var(--fc1);
     border: 1px solid var(--borderColor);
     border-radius: 8px;
     backdrop-filter: blur(3px);
 }
 
-/* Topbar & Navbar */
-.topbar { background-color: var(--pc1); }
-.navbar { background-color: var(--pc2); }
+/* Inner depth */
+.panel-inner,
+.well .well {
+    background-color: var(--panel-inner) !important;
+}
 
 /* Hover depth */
-.panel:hover {
-    background-color: var(--pc3);
+.panel:hover,
+.box:hover {
+    background-color: var(--panel-hover) !important;
+}
+
+/* ---------- Topbar / Navbar ---------- */
+.topbar,
+.navbar {
+    background-color: rgba(6, 12, 18, 0.9) !important;
 }
 
 /* ---------- Buttons ---------- */
-button, .btn {
+button,
+.btn {
     background: var(--button1);
     color: var(--buttonText);
     border: 1px solid var(--borderColor);
@@ -103,7 +126,8 @@ button, .btn {
     transition: background 0.2s ease;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
     background: var(--buttonHover);
 }
 
@@ -115,29 +139,29 @@ button:hover, .btn:hover {
 }
 
 .lion-table th {
-    background-color: var(--sc1);
+    background-color: var(--table-head);
     color: var(--fc2);
 }
 
 .lion-table td {
-    background-color: var(--sc4);
+    background-color: var(--table-row1);
     padding: 6px 10px;
 }
 
 .lion-table tr:nth-child(odd) td {
-    background-color: var(--sc3);
+    background-color: var(--table-row2);
 }
 
 /* ---------- Alerts ---------- */
 .alert {
-    background-color: var(--pc4);
+    background-color: var(--panel-inner);
     border-left: 4px solid #6fa7c2;
     color: var(--fc1);
 }
 
 /* ---------- Chat ---------- */
 .chat-box {
-    background-color: var(--bgColor);
+    background-color: var(--panel-main);
     border: 1px solid var(--borderColor);
 }
 
@@ -147,14 +171,18 @@ button:hover, .btn:hover {
 
 /* ---------- Comment Boxes ---------- */
 .comment-box {
-    background-color: var(--pc4);
+    background-color: var(--panel-inner);
 }
 
-/* ---------- Text Cleanup ---------- */
+/* ---------- Text Styling ---------- */
 h1, h2, h3, h4, h5 {
     color: #eaf4f8;
     letter-spacing: 0.03em;
     font-weight: 500;
+}
+
+p, li, td {
+    line-height: 1.5;
 }
 
 a {
@@ -165,13 +193,12 @@ a:hover {
     color: #cfe9f5;
 }
 
-/* ---------- Lioden Floating Button Fix ---------- */
-#lionden,
+/* ---------- Floating Lioden UI Fix ---------- */
+#scrollUp,
 #lioden_button,
-.lioden-button,
-#scrollUp {
-    position: relative !important;
-    z-index: 9999 !important;
+.lioden-button {
+    position: fixed !important;
+    z-index: 10000 !important;
 }
 
 /* ---------- Responsive ---------- */
@@ -179,20 +206,11 @@ a:hover {
     body {
         background-attachment: scroll;
     }
+    .container,
     .panel,
     .chat-box,
     .lion-table {
         font-size: 0.95rem;
     }
-}
-body {
-    outline: 3px solid red !important;
-}
-#den,
-#denContent,
-#content,
-.container,
-.container-fluid {
-    outline: 5px solid red !important;
 }
 
