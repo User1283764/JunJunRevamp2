@@ -1,4 +1,14 @@
 /* ===============================
+   REMOVE LIODEN TEAL BASE LAYER
+   =============================== */
+
+body,
+#content,
+#content > .container,
+#content > .container > .row {
+    background: transparent !important;
+}
+/* ===============================
    STORMY JUNGLE DEN – CLEAN BUILD
    =============================== */
 
