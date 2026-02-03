@@ -1,6 +1,6 @@
 /* ==========================
    STORMY MIST JUNGLE THEME
-   Image-matched, no glow
+   Image-matched, mist overlay
    ========================== */
 
 /* ---------- Variables ---------- */
@@ -10,7 +10,7 @@
     --fc2: #9fc3d6;      /* Links / accents */
     --fc3: #b6d1de;      /* Subtle text */
 
-    /* Panel Colors (misty dark blues) */
+    /* Panel Colors (stormy blue-gray) */
     --bgColor: rgba(10, 20, 26, 0.82);
     --pc1: rgba(8, 16, 22, 0.9);   /* Topbar */
     --pc2: rgba(8, 16, 22, 0.9);   /* Navbar */
@@ -32,10 +32,10 @@
     --buttonText: #eaf4f8;
 }
 
-/* ---------- Background (THIS KILLS THE TEAL) ---------- */
+/* ---------- Background (forced over Lioden teal) ---------- */
 html, body {
     background-color: #000 !important;
-    background-image: url('https://i.ibb.co/3s4tD0T/vertical-shot-tree-with-dark-cloud.jpg') !important;
+    background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
     background-repeat: no-repeat !important;
     background-position: center top !important;
     background-size: cover !important;
@@ -58,7 +58,7 @@ body::before {
     z-index: 0;
 }
 
-/* Ensure content stays above mist */
+/* Keep content above mist */
 body * {
     position: relative;
     z-index: 1;
