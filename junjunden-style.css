@@ -1,7 +1,8 @@
 /* ==========================
-   STORM JUNGLE — DARK RESET
+   STORM JUNGLE — FINAL CLEAN
    ========================== */
 
+/* Soft jungle font */
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600&display=swap');
 
 :root {
@@ -10,13 +11,13 @@
     --text-soft: #a8c3cc;
 
     /* Near-black jungle panels */
-    --panel-main: rgba(5, 12, 14, 0.78);
-    --panel-inner: rgba(5, 12, 14, 0.6);
+    --panel-main: rgba(6, 12, 14, 0.65);
+    --panel-inner: rgba(6, 12, 14, 0.45);
 
     --border-soft: rgba(140, 180, 190, 0.15);
 }
 
-/* ===== Background (LOCKED) ===== */
+/* ===== Background (LOCKED — do not touch) ===== */
 html, body {
     background-color: #000 !important;
     background-image: url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') !important;
@@ -30,12 +31,28 @@ html, body {
     font-family: 'Mulish', sans-serif !important;
 }
 
-/* ===== Force font everywhere ===== */
+/* Force font everywhere */
 * {
     font-family: 'Mulish', sans-serif !important;
 }
 
-/* ===== MAIN CONTENT BACKDROP ===== */
+/* ===== GLOBAL DARK OVERLAY (more transparent) ===== */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 8, 10, 0.45); /* transparency tuned */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Lift all content above overlay */
+body > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== MAIN CONTENT AREAS ===== */
 .container,
 .content,
 #main,
@@ -46,7 +63,7 @@ html, body {
     border: 1px solid var(--border-soft);
 }
 
-/* ===== Inner panels (slightly lighter, still transparent) ===== */
+/* ===== Inner panels ===== */
 .panel,
 .panel-inner,
 .alert,
@@ -75,7 +92,7 @@ a:hover {
 /* ===== Buttons ===== */
 button,
 .btn {
-    background-color: rgba(10, 22, 26, 0.85);
+    background-color: rgba(10, 18, 20, 0.75);
     color: #eaf4f8;
     border: 1px solid var(--border-soft);
     border-radius: 6px;
@@ -83,44 +100,6 @@ button,
 
 button:hover,
 .btn:hover {
-    background-color: rgba(20, 38, 44, 0.9);
-}
-/* ===== FINAL OVERRIDE: Largest Light Panel ===== */
-.container-fluid,
-.row,
-.col-md-12,
-.well {
-    background-color: rgba(4, 8, 10, 0.65) !important;
-    box-shadow: none !important;
-}
-
-/* Ensure nothing underneath forces brightness */
-.container-fluid *,
-.row *,
-.col-md-12 * {
-    background-clip: padding-box;
-}
-/* ===== REMOVE LIODEN'S LIGHT TEAL OVERLAY ===== */
-.container::before,
-.container-fluid::before,
-#main::before,
-body::before {
-    content: none !important;
-    background: transparent !important;
-}
-/* ===== GLOBAL DARK OVERLAY (matches background mood) ===== */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(4, 8, 10, 0.55); /* near-black jungle shadow */
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* Lift all actual page content above the overlay */
-body > * {
-    position: relative;
-    z-index: 2;
+    background-color: rgba(20, 32, 36, 0.85);
 }
 
