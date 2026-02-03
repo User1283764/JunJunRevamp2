@@ -1,10 +1,8 @@
-#pageContainer { outline: 6px solid red !important; }
+/* ==================================
+   STORMY JUNGLE DEN — MASK METHOD
+   ================================== */
 
-/* ===============================
-   LIODEN DEN – DIRECT FIX
-   =============================== */
-
-/* Font */
+/* Soft jungle font */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
 
 body {
@@ -21,19 +19,38 @@ html, body {
     background-attachment: fixed !important;
 }
 
-/* 🔴 THIS IS THE TEAL BOX */
+/* ================================
+   TEAL SLAB VISUAL CANCELLATION
+   ================================ */
+
+/* Target the den content area */
 #pageContainer {
-    background-color: rgba(6, 12, 18, 0.85) !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Dark overlay INSIDE the teal slab */
+#pageContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 12, 18, 0.82);
+    backdrop-filter: blur(3px);
     border-radius: 16px;
-    padding: 20px;
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* Kill inner teal layers */
-#pageContainer > div {
-    background-color: transparent !important;
+/* Keep all real content above the overlay */
+#pageContainer > * {
+    position: relative;
+    z-index: 1;
 }
 
-/* Panels */
+/* ================================
+   INNER PANELS
+   ================================ */
+
 .panel,
 .alert,
 .chat-box,
