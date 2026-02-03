@@ -1,4 +1,17 @@
 /* ==========================
+   REMOVE TEAL UNDERLAY
+   ========================== */
+
+#pageContainer.parent,
+#pageContainer-row,
+#pageContainerWrapper,
+#pageContainer.container,
+#pageContainer.row,
+#pageContainer.col-md-9 {
+    background-color: transparent !important;
+}
+
+/* ==========================
    MAIN DEN BACKGROUND SLAB
    ========================== */
 
