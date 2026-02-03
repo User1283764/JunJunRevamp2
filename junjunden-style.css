@@ -85,4 +85,19 @@ button:hover,
 .btn:hover {
     background-color: rgba(20, 38, 44, 0.9);
 }
+/* ===== FINAL OVERRIDE: Largest Light Panel ===== */
+.container-fluid,
+.row,
+.col-md-12,
+.well {
+    background-color: rgba(4, 8, 10, 0.65) !important;
+    box-shadow: none !important;
+}
+
+/* Ensure nothing underneath forces brightness */
+.container-fluid *,
+.row *,
+.col-md-12 * {
+    background-clip: padding-box;
+}
 
