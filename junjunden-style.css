@@ -1,81 +1,90 @@
-/* ===============================
-   JUNJUN DEN — DARK JUNGLE BASE
-   Phase 1: Stable Core
-=============================== */
+/* =================================================
+   JUNJUN DEN — DARK JUNGLE IMMERSIVE
+================================================= */
 
-/* -------- FONT -------- */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+/* ---------- FONT (ATMOSPHERIC BUT READABLE) ---------- */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap");
 
-/* -------- GLOBAL -------- */
+/* ---------- GLOBAL ---------- */
 body {
     background: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg")
         center center fixed no-repeat;
     background-size: cover;
     color: #ffffff !important;
-    font-family: "Montserrat", "Segoe UI", sans-serif;
+    font-family: "Nunito", "Segoe UI", sans-serif;
     cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), auto;
 }
 
-/* -------- HEADER -------- */
+/* ---------- HEADER ---------- */
 .navbar {
     background: #000000 !important;
-    border-radius: 0 0 18px 18px;
+    border-radius: 0 0 20px 20px;
 }
 
 .navbar a {
     color: #ffffff !important;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
-/* -------- MAIN CONTENT AREA -------- */
-#main {
-    background: rgba(0, 0, 0, 0.55) !important;
-    border-radius: 18px;
-    padding: 15px;
-}
-
-/* -------- SIDEBAR -------- */
+/* ---------- MAIN + SIDEBAR BASE ---------- */
+#main,
 #sidebar {
-    background: rgba(0, 0, 0, 0.55) !important;
-    border-radius: 18px;
-    padding: 10px;
+    background: rgba(0, 0, 0, 0.65) !important;
+    border-radius: 20px;
+    padding: 14px;
 }
 
-/* -------- SIDEBAR TABLES -------- */
+/* ---------- SIDEBAR PANELS ---------- */
 #sidebar .panel,
 #sidebar .well {
     background: #000000 !important;
-    border-radius: 16px;
+    border-radius: 18px;
     border: none !important;
-    box-shadow: none !important;
-    margin-bottom: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    margin-bottom: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* -------- MAIN TABLES / BOXES -------- */
+#sidebar .panel:hover,
+#sidebar .well:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 35px rgba(0,0,0,0.8);
+}
+
+/* ---------- MAIN CONTENT PANELS ---------- */
 #main .panel,
 #main .well {
-    background: rgba(0, 0, 0, 0.6) !important;
-    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 18px;
     border: none !important;
-    box-shadow: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* -------- TEXT -------- */
+#main .panel:hover,
+#main .well:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.9);
+}
+
+/* ---------- TEXT ---------- */
 h1, h2, h3, h4 {
     color: #ffffff !important;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 a {
     color: #8fbfc2 !important;
+    font-weight: 600;
 }
 
 a:hover {
-    color: #b9dde0 !important;
+    color: #cde6e8 !important;
 }
 
-/* -------- BUTTONS -------- */
+/* ---------- BUTTONS ---------- */
 .btn,
 input[type="submit"],
 input[type="button"] {
@@ -83,7 +92,8 @@ input[type="button"] {
     color: #ffffff !important;
     border-radius: 999px !important;
     border: none !important;
-    font-weight: 600;
+    font-weight: 700;
+    letter-spacing: 0.04em;
 }
 
 .btn:hover,
@@ -92,9 +102,18 @@ input[type="button"]:hover {
     background: #8fbfc2 !important;
 }
 
-/* -------- STATUS BARS -------- */
+/* ---------- HEADER BUTTONS (COLOR ONLY) ---------- */
+.navbar .btn {
+    background: #2f6f73 !important;
+}
+
+.navbar .btn:hover {
+    background: #8fbfc2 !important;
+}
+
+/* ---------- STATUS BARS ---------- */
 .progress {
-    background: rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
     border-radius: 999px;
 }
 
@@ -103,39 +122,21 @@ input[type="button"]:hover {
     border-radius: 999px;
 }
 
-/* -------- MOOD / THOUGHT TEXT -------- */
+/* ---------- MOOD / THOUGHT TEXT ---------- */
 p strong {
     color: #8fbfc2 !important;
 }
 
-/* -------- POPUP NOTIFICATIONS -------- */
+/* ---------- POPUP NOTIFICATIONS ---------- */
 .alert,
 .toast {
     background: #9fcfd2 !important;
     color: #000000 !important;
-    border-radius: 16px;
+    border-radius: 18px;
+    font-weight: 600;
 }
 
-/* -------- HUMAN MADE ICON -------- */
-img[src*="human"] {
-    filter: brightness(0) invert(1);
-}
-/* -------- HOVER LIFT EFFECT -------- */
-#main .panel,
-#sidebar .panel,
-#main .well,
-#sidebar .well {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-#main .panel:hover,
-#sidebar .panel:hover,
-#main .well:hover,
-#sidebar .well:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-}
-/* -------- CURSOR CONSISTENCY -------- */
+/* ---------- CURSOR CONSISTENCY ---------- */
 a,
 button,
 .btn,
@@ -143,17 +144,8 @@ input,
 select {
     cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
 }
-/* -------- THOUGHTS LINE ACCENT -------- */
-p:has(strong):has(em),
-p strong em {
-    color: #8fbfc2 !important;
-}
-/* -------- HEADER BUTTON COLOR MATCH -------- */
-.navbar .btn {
-    background: #2f6f73 !important;
-    color: #ffffff !important;
-}
 
-.navbar .btn:hover {
-    background: #8fbfc2 !important;
+/* ---------- HUMAN MADE ICON ---------- */
+img[src*="human"] {
+    filter: brightness(0) invert(1);
 }
