@@ -1,83 +1,98 @@
-/* =========================
-   SAFE RESET / STABILITY BASE
-   (NO EXTERNAL TEXTURES)
-========================= */
+/* ===============================
+   JUNJUN DEN — DARK JUNGLE BASE
+   Phase 1: Stable Core
+=============================== */
 
+/* -------- FONT -------- */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+/* -------- GLOBAL -------- */
 body {
     background: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg")
         center center fixed no-repeat;
     background-size: cover;
     color: #ffffff !important;
-    font-family: "Quicksand", "Segoe UI", sans-serif;
+    font-family: "Montserrat", "Segoe UI", sans-serif;
     cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), auto;
 }
 
-/* =========================
-   HEADER
-========================= */
-
+/* -------- HEADER -------- */
 .navbar {
     background: #000000 !important;
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 18px 18px;
 }
 
 .navbar a {
     color: #ffffff !important;
     font-weight: 700;
+    letter-spacing: 0.05em;
 }
 
-/* =========================
-   MAIN + SIDEBAR CONTAINERS
-========================= */
+/* -------- MAIN CONTENT AREA -------- */
+#main {
+    background: rgba(0, 0, 0, 0.55) !important;
+    border-radius: 18px;
+    padding: 15px;
+}
 
-#main,
+/* -------- SIDEBAR -------- */
 #sidebar {
     background: rgba(0, 0, 0, 0.55) !important;
-    border-radius: 14px;
+    border-radius: 18px;
+    padding: 10px;
 }
 
-/* =========================
-   REMOVE BOOTSTRAP WHITES
-========================= */
+/* -------- SIDEBAR TABLES -------- */
+#sidebar .panel,
+#sidebar .well {
+    background: #000000 !important;
+    border-radius: 16px;
+    border: none !important;
+    box-shadow: none !important;
+    margin-bottom: 12px;
+}
 
-.well,
-.panel,
-.panel-body {
-    background: transparent !important;
+/* -------- MAIN TABLES / BOXES -------- */
+#main .panel,
+#main .well {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 16px;
     border: none !important;
     box-shadow: none !important;
 }
 
-/* =========================
-   SIDEBAR PANELS
-========================= */
-
-#sidebar .panel {
-    background: rgba(0, 0, 0, 0.65) !important;
-    border-radius: 14px;
+/* -------- TEXT -------- */
+h1, h2, h3, h4 {
+    color: #ffffff !important;
+    font-weight: 700;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+a {
+    color: #8fbfc2 !important;
+}
 
+a:hover {
+    color: #b9dde0 !important;
+}
+
+/* -------- BUTTONS -------- */
 .btn,
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
     background: #2f6f73 !important;
     color: #ffffff !important;
     border-radius: 999px !important;
     border: none !important;
+    font-weight: 600;
 }
 
 .btn:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+input[type="button"]:hover {
     background: #8fbfc2 !important;
 }
 
-/* =========================
-   STATUS BARS
-========================= */
-
+/* -------- STATUS BARS -------- */
 .progress {
     background: rgba(255, 255, 255, 0.12) !important;
     border-radius: 999px;
@@ -88,29 +103,20 @@ input[type="submit"]:hover {
     border-radius: 999px;
 }
 
-/* =========================
-   MOOD TEXT
-========================= */
-
+/* -------- MOOD / THOUGHT TEXT -------- */
 p strong {
     color: #8fbfc2 !important;
 }
 
-/* =========================
-   POPUPS
-========================= */
-
+/* -------- POPUP NOTIFICATIONS -------- */
 .alert,
 .toast {
     background: #9fcfd2 !important;
     color: #000000 !important;
-    border-radius: 14px;
+    border-radius: 16px;
 }
 
-/* =========================
-   HUMAN MADE ICON
-========================= */
-
+/* -------- HUMAN MADE ICON -------- */
 img[src*="human"] {
     filter: brightness(0) invert(1);
 }
