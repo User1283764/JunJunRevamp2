@@ -120,3 +120,40 @@ p strong {
 img[src*="human"] {
     filter: brightness(0) invert(1);
 }
+/* -------- HOVER LIFT EFFECT -------- */
+#main .panel,
+#sidebar .panel,
+#main .well,
+#sidebar .well {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#main .panel:hover,
+#sidebar .panel:hover,
+#main .well:hover,
+#sidebar .well:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+/* -------- CURSOR CONSISTENCY -------- */
+a,
+button,
+.btn,
+input,
+select {
+    cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
+}
+/* -------- THOUGHTS LINE ACCENT -------- */
+p:has(strong):has(em),
+p strong em {
+    color: #8fbfc2 !important;
+}
+/* -------- HEADER BUTTON COLOR MATCH -------- */
+.navbar .btn {
+    background: #2f6f73 !important;
+    color: #ffffff !important;
+}
+
+.navbar .btn:hover {
+    background: #8fbfc2 !important;
+}
