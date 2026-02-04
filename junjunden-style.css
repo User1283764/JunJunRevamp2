@@ -1,220 +1,126 @@
-/* =========================================================
-   JUNJUN DEN — DECORATIVE DARK JUNGLE
-   Path 2: Visual-first, immersive layout
-========================================================= */
+/* ============================
+   JUNJUN DEN — DARK JUNGLE v1
+   Desktop-focused, decorative
+   ============================ */
 
-/* ---------- FONT (ATMOSPHERIC, READABLE) ---------- */
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Nunito:wght@400;600&display=swap");
+/* --- Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
-/* ---------- GLOBAL ---------- */
+/* --- Global Reset --- */
 body {
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.55),
-            rgba(0,0,0,0.75)
-        ),
-        url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg")
-        center center fixed no-repeat;
-    background-size: cover;
-    color: #ffffff !important;
-    font-family: "Nunito", sans-serif;
-    cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), auto;
+  background: url("https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg")
+              center center / cover no-repeat fixed !important;
+  color: #ffffff !important;
+  font-family: 'Nunito', sans-serif;
 }
 
-/* ---------- HEADER ---------- */
-.navbar {
-    background: linear-gradient(
-        to bottom,
-        #000000,
-        #050505
-    ) !important;
-    border-bottom: 3px solid #2f6f73;
-    border-radius: 0 0 22px 22px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+/* Remove default white backgrounds */
+.container,
+#main,
+.col-md-9,
+.col-md-3,
+.table,
+.table-responsive {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* --- Main content + sidebar panels --- */
+.table,
+.feature,
+.alert,
+.panel {
+  background: rgba(0, 0, 0, 0.72) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  margin-bottom: 16px;
+}
+
+/* Sidebar specifically */
+.col-md-3 .table {
+  background: rgba(0, 0, 0, 0.78) !important;
+}
+
+/* --- Hover lift effect --- */
+.table:hover,
+.feature:hover {
+  transform: translateY(-4px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.75);
+}
+
+/* --- Header / navbar --- */
+.navbar,
+.navbar-default {
+  background: #000000 !important;
+  border-radius: 0 0 18px 18px;
+  border: none !important;
 }
 
 .navbar a {
-    font-family: "Cinzel", serif;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #ffffff !important;
+  color: #ffffff !important;
+  font-weight: 700;
 }
 
-/* ---------- MAIN + SIDEBAR WRAPPERS ---------- */
-#main,
-#sidebar {
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.75),
-            rgba(0,0,0,0.85)
-        ) !important;
-    border-radius: 24px;
-    padding: 18px;
-    box-shadow:
-        inset 0 0 0 2px rgba(47,111,115,0.35),
-        0 20px 45px rgba(0,0,0,0.85);
-}
-
-/* ---------- SECTION FRAMING ---------- */
-#main::before,
-#sidebar::before {
-    content: "";
-    display: block;
-    height: 6px;
-    margin-bottom: 14px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        #2f6f73,
-        transparent
-    );
-    border-radius: 999px;
-    opacity: 0.8;
-}
-
-/* ---------- SIDEBAR PANELS ---------- */
-#sidebar .panel,
-#sidebar .well {
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.85),
-            rgba(0,0,0,0.95)
-        ) !important;
-    border-radius: 20px;
-    border: 1px solid rgba(143,191,194,0.35);
-    box-shadow:
-        inset 0 0 25px rgba(0,0,0,0.9),
-        0 15px 35px rgba(0,0,0,0.8);
-    margin-bottom: 18px;
-    padding: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#sidebar .panel:hover,
-#sidebar .well:hover {
-    transform: translateY(-8px);
-    box-shadow:
-        inset 0 0 25px rgba(0,0,0,0.9),
-        0 25px 50px rgba(0,0,0,0.95);
-}
-
-/* ---------- MAIN CONTENT PANELS ---------- */
-#main .panel,
-#main .well {
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.8),
-            rgba(0,0,0,0.95)
-        ) !important;
-    border-radius: 22px;
-    border: 1px solid rgba(47,111,115,0.4);
-    box-shadow:
-        inset 0 0 30px rgba(0,0,0,0.9),
-        0 25px 60px rgba(0,0,0,0.95);
-    margin-bottom: 22px;
-    padding: 14px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#main .panel:hover,
-#main .well:hover {
-    transform: translateY(-10px);
-}
-
-/* ---------- HEADINGS ---------- */
+/* --- Text --- */
 h1, h2, h3, h4 {
-    font-family: "Cinzel", serif;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #ffffff !important;
-    text-shadow: 0 0 12px rgba(47,111,115,0.5);
+  color: #ffffff !important;
+  font-weight: 700;
 }
 
-/* ---------- LINKS ---------- */
-a {
-    color: #8fbfc2 !important;
-    font-weight: 600;
+p, span, td, th {
+  color: #ffffff !important;
 }
 
-a:hover {
-    color: #cfe9ec !important;
-    text-shadow: 0 0 6px rgba(143,191,194,0.6);
-}
-
-/* ---------- BUTTONS ---------- */
-.btn,
-input[type="submit"],
-input[type="button"] {
-    background:
-        linear-gradient(
-            to bottom,
-            #3c7f83,
-            #1f5054
-        ) !important;
-    color: #ffffff !important;
-    border-radius: 999px !important;
-    border: 1px solid rgba(143,191,194,0.5) !important;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.8);
-}
-
-.btn:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover {
-    background:
-        linear-gradient(
-            to bottom,
-            #8fbfc2,
-            #4f8f94
-        ) !important;
-    color: #000000 !important;
-}
-
-/* ---------- STATUS BARS ---------- */
+/* --- Status bars --- */
 .progress {
-    background: rgba(255,255,255,0.1) !important;
-    border-radius: 999px;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+  background: rgba(255,255,255,0.15) !important;
+  border-radius: 12px;
 }
 
 .progress-bar {
-    background:
-        linear-gradient(
-            to right,
-            #2f6f73,
-            #8fbfc2
-        ) !important;
-    border-radius: 999px;
+  background-color: #2f6f73 !important;
+  border-radius: 12px;
 }
 
-/* ---------- MOOD / THOUGHT TEXT ---------- */
-p strong {
-    color: #8fbfc2 !important;
-    text-shadow: 0 0 6px rgba(143,191,194,0.5);
+/* --- Accent text (happy / awkward / frivolous thoughts) --- */
+.text-success,
+.text-info,
+.text-warning {
+  color: #6fbfc2 !important;
+  font-weight: 600;
 }
 
-/* ---------- POPUPS ---------- */
-.alert,
-.toast {
-    background: #9fcfd2 !important;
-    color: #000000 !important;
-    border-radius: 20px;
-    font-weight: 700;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
-
-/* ---------- CURSOR CONSISTENCY ---------- */
-a,
-button,
+/* --- Buttons (Lioden buttons) --- */
 .btn,
-input,
-select {
-    cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
+input[type="submit"] {
+  background: #2f6f73 !important;
+  border: none !important;
+  color: #ffffff !important;
+  border-radius: 14px !important;
 }
 
-/* ---------- HUMAN MADE ICON ---------- */
-img[src*="human"] {
-    filter: brightness(0) invert(1);
+.btn:hover,
+input[type="submit"]:hover {
+  background: #6fbfc2 !important;
+  color: #000000 !important;
+}
+
+/* --- Links --- */
+a {
+  color: #6fbfc2 !important;
+}
+
+a:hover {
+  color: #a8e1e3 !important;
+}
+
+/* --- Custom cursor --- */
+* {
+  cursor: url("https://user1283764.github.io/JunJunRevamp2/Lioden%20Custom%20Cursor.png"), auto !important;
+}
+
+/* --- Human-made icon --- */
+img[alt*="Human"] {
+  filter: brightness(0) invert(1);
 }
