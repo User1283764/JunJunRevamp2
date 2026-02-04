@@ -1,89 +1,120 @@
-/* ============================
-   JUNJUN DEN — DARK JUNGLE v1
-   Desktop-focused, decorative
-   ============================ */
+/* ======================================================
+   JUNJUN DEN — DARK JUNGLE FRAME LAYOUT
+   Desktop-first, immersive, unified structure
+   ====================================================== */
 
-/* --- Google Font --- */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+/* ---------- FONT ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
 
-/* --- Global Reset --- */
+/* ---------- BASE ---------- */
 body {
   background: url("https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg")
               center center / cover no-repeat fixed !important;
-  color: #ffffff !important;
   font-family: 'Nunito', sans-serif;
+  color: #eaeaea !important;
 }
 
-/* Remove default white backgrounds */
+/* Remove default whites */
+body,
 .container,
 #main,
+.row,
 .col-md-9,
 .col-md-3,
 .table,
-.table-responsive {
+.panel,
+.feature,
+.alert {
   background: transparent !important;
   border: none !important;
 }
 
-/* --- Main content + sidebar panels --- */
+/* ---------- MAIN JUNGLE FRAME ---------- */
+#main .container {
+  position: relative;
+  padding: 28px !important;
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+/* Frame background */
+#main .container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  border-radius: 26px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.75);
+  z-index: -1;
+}
+
+/* ---------- SECTION PANELS (SUBTLE, NOT BOXEY) ---------- */
 .table,
 .feature,
-.alert,
-.panel {
-  background: rgba(0, 0, 0, 0.72) !important;
+.panel,
+.alert {
+  background: rgba(0, 0, 0, 0.35) !important;
   border-radius: 18px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   margin-bottom: 16px;
+  padding: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Sidebar specifically */
-.col-md-3 .table {
-  background: rgba(0, 0, 0, 0.78) !important;
-}
-
-/* --- Hover lift effect --- */
+/* Hover lift */
 .table:hover,
 .feature:hover {
   transform: translateY(-4px);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 14px 36px rgba(0,0,0,0.75);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
 }
 
-/* --- Header / navbar --- */
+/* ---------- SIDEBAR INTEGRATION ---------- */
+.col-md-3 {
+  padding-left: 12px;
+}
+
+.col-md-3 .table {
+  background: rgba(0, 0, 0, 0.42) !important;
+}
+
+/* ---------- HEADER / NAVBAR ---------- */
 .navbar,
 .navbar-default {
   background: #000000 !important;
-  border-radius: 0 0 18px 18px;
   border: none !important;
+  border-radius: 0 0 22px 22px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
 }
 
 .navbar a {
   color: #ffffff !important;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
-/* --- Text --- */
+/* ---------- TYPOGRAPHY ---------- */
 h1, h2, h3, h4 {
   color: #ffffff !important;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 p, span, td, th {
-  color: #ffffff !important;
+  color: #eaeaea !important;
+  font-weight: 400;
 }
 
-/* --- Status bars --- */
+/* ---------- STATUS BARS ---------- */
 .progress {
-  background: rgba(255,255,255,0.15) !important;
-  border-radius: 12px;
+  background: rgba(255,255,255,0.12) !important;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
 .progress-bar {
   background-color: #2f6f73 !important;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
-/* --- Accent text (happy / awkward / frivolous thoughts) --- */
+/* ---------- ACCENT TEXT ---------- */
 .text-success,
 .text-info,
 .text-warning {
@@ -91,36 +122,51 @@ p, span, td, th {
   font-weight: 600;
 }
 
-/* --- Buttons (Lioden buttons) --- */
+/* ---------- BUTTONS (CLEARLY CUSTOM) ---------- */
 .btn,
-input[type="submit"] {
+input[type="submit"],
+button {
   background: #2f6f73 !important;
   border: none !important;
+  border-radius: 18px !important;
   color: #ffffff !important;
-  border-radius: 14px !important;
+  font-weight: 600;
+  padding: 6px 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+button:hover {
   background: #6fbfc2 !important;
   color: #000000 !important;
+  transform: translateY(-2px);
 }
 
-/* --- Links --- */
+/* ---------- LINKS ---------- */
 a {
   color: #6fbfc2 !important;
+  transition: color 0.2s ease;
 }
 
 a:hover {
   color: #a8e1e3 !important;
 }
 
-/* --- Custom cursor --- */
+/* ---------- CUSTOM CURSOR (GLOBAL, NO REVERT) ---------- */
 * {
   cursor: url("https://user1283764.github.io/JunJunRevamp2/Lioden%20Custom%20Cursor.png"), auto !important;
 }
 
-/* --- Human-made icon --- */
+/* ---------- HUMAN-MADE ICON ---------- */
 img[alt*="Human"] {
   filter: brightness(0) invert(1);
+}
+
+/* ---------- DESKTOP ONLY SAFETY ---------- */
+@media (max-width: 991px) {
+  #main .container::before {
+    border-radius: 0;
+  }
 }
