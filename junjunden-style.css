@@ -1,6 +1,5 @@
 /* ======================================================
-   JUNJUN DEN — DARK JUNGLE FRAME LAYOUT
-   Desktop-first, immersive, unified structure
+   JUNJUN DEN — DARK JUNGLE FRAME (FIXED)
    ====================================================== */
 
 /* ---------- FONT ---------- */
@@ -14,159 +13,165 @@ body {
   color: #eaeaea !important;
 }
 
-/* Remove default whites */
-body,
+/* ---------- REMOVE ALL DEFAULT WHITES & BORDERS ---------- */
+*, *::before, *::after {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none;
+}
+
 .container,
 #main,
 .row,
 .col-md-9,
-.col-md-3,
-.table,
-.panel,
-.feature,
-.alert {
+.col-md-3 {
   background: transparent !important;
-  border: none !important;
 }
 
-/* ---------- MAIN JUNGLE FRAME ---------- */
+/* ---------- MAIN FRAME ---------- */
 #main .container {
   position: relative;
-  padding: 28px !important;
-  margin-top: 24px;
-  margin-bottom: 40px;
+  padding: 30px !important;
+  margin: 24px auto 40px;
 }
 
-/* Frame background */
 #main .container::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.78);
-  border-radius: 26px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 28px;
+  box-shadow: 0 28px 70px rgba(0,0,0,0.8);
   z-index: -1;
 }
 
-/* ---------- SECTION PANELS (SUBTLE, NOT BOXEY) ---------- */
-.table,
-.feature,
-.panel,
-.alert {
-  background: rgba(0, 0, 0, 0.35) !important;
-  border-radius: 18px !important;
-  margin-bottom: 16px;
-  padding: 10px;
+/* ---------- TABLES: THIS IS THE BIG FIX ---------- */
+.table {
+  background: transparent !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+.table tbody,
+.table tr,
+.table td,
+.table th {
+  background: rgba(0, 0, 0, 0.55) !important;
+  color: #eaeaea !important;
+}
+
+/* Round table edges cleanly */
+.table tr:first-child td:first-child {
+  border-top-left-radius: 18px;
+}
+.table tr:first-child td:last-child {
+  border-top-right-radius: 18px;
+}
+.table tr:last-child td:first-child {
+  border-bottom-left-radius: 18px;
+}
+.table tr:last-child td:last-child {
+  border-bottom-right-radius: 18px;
+}
+
+/* ---------- SUBTLE DEPTH ---------- */
+.table {
+  margin-bottom: 18px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover lift */
-.table:hover,
-.feature:hover {
+.table:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.7);
 }
 
-/* ---------- SIDEBAR INTEGRATION ---------- */
-.col-md-3 {
-  padding-left: 12px;
+/* ---------- SIDEBAR ---------- */
+.col-md-3 .table td,
+.col-md-3 .table th {
+  background: rgba(0, 0, 0, 0.6) !important;
 }
 
-.col-md-3 .table {
-  background: rgba(0, 0, 0, 0.42) !important;
-}
-
-/* ---------- HEADER / NAVBAR ---------- */
+/* ---------- HEADER ---------- */
 .navbar,
 .navbar-default {
   background: #000000 !important;
-  border: none !important;
   border-radius: 0 0 22px 22px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
 }
 
 .navbar a {
   color: #ffffff !important;
   font-weight: 800;
-  letter-spacing: 0.02em;
 }
 
-/* ---------- TYPOGRAPHY ---------- */
+/* ---------- TEXT ---------- */
 h1, h2, h3, h4 {
   color: #ffffff !important;
   font-weight: 800;
 }
 
-p, span, td, th {
+p, span {
   color: #eaeaea !important;
-  font-weight: 400;
+}
+
+/* Accent text with better contrast */
+.text-success,
+.text-info,
+.text-warning {
+  color: #7fd0d3 !important;
+  font-weight: 700;
 }
 
 /* ---------- STATUS BARS ---------- */
 .progress {
-  background: rgba(255,255,255,0.12) !important;
+  background: rgba(255,255,255,0.15) !important;
   border-radius: 14px;
-  overflow: hidden;
 }
 
 .progress-bar {
   background-color: #2f6f73 !important;
-  border-radius: 14px;
 }
 
-/* ---------- ACCENT TEXT ---------- */
-.text-success,
-.text-info,
-.text-warning {
-  color: #6fbfc2 !important;
-  font-weight: 600;
-}
-
-/* ---------- BUTTONS (CLEARLY CUSTOM) ---------- */
+/* ---------- ALL LIODEN BUTTONS (REAL FIX) ---------- */
 .btn,
-input[type="submit"],
-button {
+.btn-success,
+.btn-primary,
+.btn-warning,
+.btn-info,
+a.btn,
+input[type="submit"] {
   background: #2f6f73 !important;
-  border: none !important;
-  border-radius: 18px !important;
   color: #ffffff !important;
+  border-radius: 18px !important;
   font-weight: 600;
-  padding: 6px 14px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.5);
-  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover,
-input[type="submit"]:hover,
-button:hover {
+.btn-success:hover,
+.btn-primary:hover,
+.btn-warning:hover,
+.btn-info:hover,
+a.btn:hover,
+input[type="submit"]:hover {
   background: #6fbfc2 !important;
   color: #000000 !important;
-  transform: translateY(-2px);
 }
 
 /* ---------- LINKS ---------- */
 a {
   color: #6fbfc2 !important;
-  transition: color 0.2s ease;
 }
-
 a:hover {
   color: #a8e1e3 !important;
 }
 
-/* ---------- CUSTOM CURSOR (GLOBAL, NO REVERT) ---------- */
+/* ---------- CURSOR ---------- */
 * {
   cursor: url("https://user1283764.github.io/JunJunRevamp2/Lioden%20Custom%20Cursor.png"), auto !important;
 }
 
-/* ---------- HUMAN-MADE ICON ---------- */
-img[alt*="Human"] {
-  filter: brightness(0) invert(1);
-}
-
-/* ---------- DESKTOP ONLY SAFETY ---------- */
-@media (max-width: 991px) {
-  #main .container::before {
-    border-radius: 0;
-  }
+/* ---------- HUMAN MADE ICON (STRONG) ---------- */
+img[src*="human"],
+img[src*="made"],
+.footer img {
+  filter: brightness(0) invert(1) !important;
 }
