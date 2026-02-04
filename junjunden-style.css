@@ -1,211 +1,143 @@
-/* ==================================================
+/* ===============================
    FONT
-================================================== */
+================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
-html, body, * {
-    font-family: 'Nunito', sans-serif !important;
-    color: #ffffff !important;
+body {
+    font-family: 'Nunito', sans-serif;
+    color: #ffffff;
 }
 
-/* ==================================================
-   BACKGROUND & CURSOR
-================================================== */
+/* ===============================
+   BACKGROUND + CURSOR
+================================ */
 
 body {
-    background-image: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg")
+        no-repeat center center fixed;
     background-size: cover;
-
     cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), auto;
 }
 
 a, button, input, select, textarea {
-    cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
+    cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer;
 }
 
-/* ==================================================
-   MAIN CONTENT + SIDEBAR (TRUE TRANSPARENCY)
-================================================== */
+/* ===============================
+   MAIN CONTENT AREA
+================================ */
 
 #main {
-    background: rgba(0, 0, 0, 0.45) !important;
-    border-radius: 20px;
-    padding-bottom: 220px;
-}
-
-.container,
-.col-md-9,
-.col-md-3 {
-    background: transparent !important;
-}
-
-/* ==================================================
-   SIDEBAR TABLES (REMOVE WHITE COMPLETELY)
-================================================== */
-
-.panel,
-.panel-heading,
-.panel-body,
-.sidebar,
-.col-md-3 .panel {
-    background: rgba(0, 0, 0, 0.45) !important;
-    border: none !important;
+    background: rgba(0, 0, 0, 0.45);
     border-radius: 18px;
+    padding-bottom: 200px;
 }
 
-/* kill leftover whites */
-.panel-heading *,
-.panel-body * {
-    background: transparent !important;
+/* ===============================
+   SIDEBAR PANELS (NO WHITE)
+================================ */
+
+#sidebar .panel,
+#sidebar .panel-heading,
+#sidebar .panel-body {
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    border-radius: 16px;
 }
 
-/* ==================================================
-   ALL TABLES / BOXES
-================================================== */
+/* ===============================
+   TABLES / BOXES
+================================ */
 
 .table,
-.feature,
-.table-responsive {
-    background: rgba(0, 0, 0, 0.45) !important;
-    border: none !important;
-    border-radius: 18px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.table:hover,
-.feature:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+.feature {
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 16px;
+    border: none;
 }
 
 .table th,
 .table td {
-    background: transparent !important;
-    border: none !important;
+    background: transparent;
+    border: none;
 }
 
-/* ==================================================
-   HEADER / NAVBAR (FIXED BUTTON ISSUE)
-================================================== */
+/* ===============================
+   HEADER / NAVBAR
+================================ */
 
-.navbar,
-.navbar-default {
-    background: #000000 !important;
-    border: none !important;
-    border-radius: 20px !important;
-    margin-bottom: 20px;
-    overflow: hidden;
+.navbar {
+    background: #000000;
+    border-radius: 18px;
+    border: none;
 }
 
 .navbar a {
-    font-weight: 700 !important;
-    color: #ffffff !important;
+    color: #ffffff;
+    font-weight: 700;
 }
 
-/* ensure Lioden button isn't trapped */
-.navbar .btn,
-.navbar button {
-    position: relative !important;
-    top: 0 !important;
-}
+/* ===============================
+   BUTTONS (SAFE OVERRIDE)
+================================ */
 
-/* ==================================================
-   BUTTONS (ACTUAL LIODEN OVERRIDE)
-================================================== */
-
-button,
 .btn,
 input[type="submit"],
-input[type="button"],
-.pagination > li > a,
-.pagination > li > span {
-    background-color: #2f6f78 !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 14px !important;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+input[type="button"] {
+    background: #2f6f78;
+    color: #ffffff;
+    border-radius: 12px;
+    border: none;
 }
 
-button:hover,
-.btn:hover,
-input[type="submit"]:hover,
-.pagination > li > a:hover {
-    background-color: #6faab0 !important;
-    transform: translateY(-2px);
+.btn:hover {
+    background: #6faab0;
 }
 
-/* ==================================================
+/* ===============================
    STATUS BARS
-================================================== */
+================================ */
 
 .progress {
-    background: rgba(255, 255, 255, 0.12) !important;
-    border-radius: 14px;
-    overflow: hidden;
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
 }
 
 .progress-bar {
-    border-radius: 14px;
+    border-radius: 12px;
 }
 
-/* ==================================================
-   LINKS
-================================================== */
-
-a {
-    color: #6faab0 !important;
-}
-
-a:hover {
-    color: #9fd0d6 !important;
-}
-
-/* ==================================================
+/* ===============================
    MOOD TEXT
-================================================== */
+================================ */
 
 small.text-muted {
-    color: #6faab0 !important;
-    font-weight: 600;
+    color: #6faab0;
 }
 
-/* ==================================================
-   POPUPS / ALERTS
-================================================== */
+/* ===============================
+   ALERT POPUPS
+================================ */
 
-.alert,
-.alert-success,
-.alert-info,
-.alert-warning,
-.alert-danger {
-    background: #9fc7cc !important;
-    color: #000000 !important;
-    border: none !important;
-    border-radius: 18px;
+.alert {
+    background: #9fc7cc;
+    color: #000000;
+    border-radius: 14px;
+    border: none;
 }
 
-.alert * {
-    color: #000000 !important;
-}
+/* ===============================
+   HUMAN MADE ICON
+================================ */
 
-/* ==================================================
-   HUMAN-MADE ICON (BOTTOM RIGHT)
-================================================== */
-
-img[src*="human-made"],
-img[src*="Human"],
-img[alt*="Human"] {
+img[src*="human"] {
     filter: brightness(0) invert(1);
-    opacity: 0.9;
 }
 
-/* ==================================================
-   VINES (FOR REAL THIS TIME)
-================================================== */
+/* ===============================
+   VINES (BOTTOM)
+================================ */
 
 #main::after {
     content: "";
@@ -213,18 +145,16 @@ img[alt*="Human"] {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 220px;
-    background-image: url("https://i.imgur.com/4ZQZ6zK.png");
-    background-repeat: no-repeat;
-    background-position: center bottom;
+    height: 180px;
+    background: url("https://i.imgur.com/4ZQZ6zK.png") no-repeat center bottom;
     background-size: contain;
-    opacity: 0.45;
+    opacity: 0.4;
     pointer-events: none;
 }
 
-/* ==================================================
-   RAIN EFFECT (VISIBLE + DIAGONAL)
-================================================== */
+/* ===============================
+   RAIN (LIGHT & SAFE)
+================================ */
 
 body::before {
     content: "";
@@ -236,17 +166,16 @@ body::before {
     pointer-events: none;
     background-image: repeating-linear-gradient(
         120deg,
-        rgba(255,255,255,0.12),
-        rgba(255,255,255,0.12) 1px,
+        rgba(255,255,255,0.1),
+        rgba(255,255,255,0.1) 1px,
         transparent 1px,
-        transparent 10px
+        transparent 14px
     );
-    animation: rainMove 0.7s linear infinite;
-    opacity: 0.35;
-    z-index: 9999;
+    animation: rain 1s linear infinite;
+    opacity: 0.25;
 }
 
-@keyframes rainMove {
+@keyframes rain {
     from { transform: translateY(0); }
-    to { transform: translateY(800px); }
+    to { transform: translateY(600px); }
 }
