@@ -1,6 +1,6 @@
-/* =========================
-   GLOBAL RESET & FONT
-========================= */
+/* ==================================================
+   FONT
+================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
@@ -9,71 +9,96 @@
     color: #ffffff !important;
 }
 
-/* =========================
-   BACKGROUND & CURSOR
-========================= */
+/* ==================================================
+   BACKGROUND + CURSOR
+================================================== */
 
 body {
-    background: url("https://raw.githubusercontent.com/user1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg")
+    background: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg")
         no-repeat center center fixed;
     background-size: cover;
 
-    cursor: url("https://raw.githubusercontent.com/user1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), auto;
+    cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), auto;
 }
 
-/* =========================
-   MAIN TABLE + SIDEBAR
-========================= */
+/* Force cursor on all interactables */
+a, button, input, select, textarea, label {
+    cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
+}
 
-#main, .container {
-    background: rgba(0, 0, 0, 0.65) !important;
+/* ==================================================
+   MAIN LAYOUT — UNIFIED TRANSPARENCY
+================================================== */
+
+#main,
+.container,
+.table,
+.table-responsive,
+.feature {
+    background: rgba(0, 0, 0, 0.45) !important;
     border-radius: 18px;
+    border: none !important;
 }
 
-/* Remove visual separation */
-.col-md-3, .col-md-9 {
+/* Remove sidebar separation */
+.col-md-3,
+.col-md-9 {
     background: transparent !important;
 }
 
-/* =========================
+/* ==================================================
    SIDEBAR BOXES
-========================= */
+================================================== */
 
-.panel {
+.panel,
+.panel-heading,
+.panel-body {
     background: #000000 !important;
-    border-radius: 16px;
     border: none !important;
+    border-radius: 16px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .panel:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
 }
 
-/* =========================
-   ALL TABLES / CONTENT BOXES
-========================= */
+/* ==================================================
+   TABLE CELLS — REMOVE WHITE
+================================================== */
 
-.table, .table-responsive, .feature {
-    background: rgba(0, 0, 0, 0.65) !important;
-    border-radius: 16px;
+.table th,
+.table td {
+    background: transparent !important;
     border: none !important;
+}
+
+/* ==================================================
+   HOVER LIFT (ALL BOXES)
+================================================== */
+
+.table,
+.feature {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.table:hover {
+.table:hover,
+.feature:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
 }
 
-/* =========================
-   HEADER & NAV BAR
-========================= */
+/* ==================================================
+   HEADER / NAV BAR
+================================================== */
 
-.navbar, .navbar-default {
+.navbar,
+.navbar-default {
     background: #000000 !important;
     border: none !important;
+    border-radius: 18px !important;
+    overflow: hidden;
 }
 
 .navbar a {
@@ -81,122 +106,9 @@ body {
     color: #ffffff !important;
 }
 
-/* =========================
-   BUTTONS (TEAL THEME)
-========================= */
-
-.btn, button, input[type="submit"] {
-    background: #2f6f78 !important;
-    border: none !important;
-    border-radius: 12px;
-    color: #ffffff !important;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-    background: #6faab0 !important;
-    transform: translateY(-2px);
-}
-
-/* =========================
-   STATUS BARS
-========================= */
-
-.progress {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    border-radius: 12px;
-}
-
-/* =========================
-   MOOD TEXT COLOR
-========================= */
-
-small.text-muted {
-    color: #6faab0 !important;
-    font-weight: 500;
-}
-
-/* =========================
-   LINKS
-========================= */
-
-a {
-    color: #6faab0 !important;
-}
-
-a:hover {
-    color: #9fd0d6 !important;
-}
-
-/* =========================
-   VINES AT BOTTOM
-   (PLACEHOLDER IMAGE)
-========================= */
-
-#main::after {
-    content: "";
-    display: block;
-    height: 180px;
-    background: url("https://i.imgur.com/PLACEHOLDERVINES.png") no-repeat center bottom;
-    background-size: contain;
-    opacity: 0.35;
-    margin-top: 40px;
-}
-
-/* =========================
-   FAINT RAIN EFFECT
-========================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: linear-gradient(
-        rgba(255,255,255,0.06) 1px,
-        transparent 1px
-    );
-    background-size: 2px 8px;
-    animation: rain 0.6s linear infinite;
-    opacity: 0.25;
-}
-
-@keyframes rain {
-    from { background-position: 0 0; }
-    to { background-position: -10px 20px; }
-}
-/* =========================
-   STRONGER TRANSPARENCY
-========================= */
-
-#main, .container,
-.table, .table-responsive, .feature {
-    background: rgba(0, 0, 0, 0.45) !important;
-}
-
-/* =========================
-   REMOVE WHITE SIDEBAR / TABLE EDGES
-========================= */
-
-.panel-heading,
-.panel-body,
-.table th,
-.table td {
-    background: #000000 !important;
-    border: none !important;
-}
-
-/* =========================
-   FULL BUTTON OVERRIDE
-========================= */
+/* ==================================================
+   BUTTONS — MUTED TEAL
+================================================== */
 
 .btn,
 .btn-default,
@@ -206,37 +118,79 @@ body::before {
 .btn-warning,
 .btn-danger,
 .pagination > li > a,
-.pagination > li > span {
+.pagination > li > span,
+input[type="submit"] {
     background: #2f6f78 !important;
     color: #ffffff !important;
     border: none !important;
+    border-radius: 14px;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover,
 .pagination > li > a:hover {
     background: #6faab0 !important;
+    transform: translateY(-2px);
 }
 
-/* =========================
-   CUSTOM CURSOR — FORCE EVERYWHERE
-========================= */
+/* ==================================================
+   STATUS BARS
+================================================== */
 
-a, button, input, select, textarea, label {
-    cursor: url("https://raw.githubusercontent.com/user1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
-}
-
-/* =========================
-   ROUNDED HEADER
-========================= */
-
-.navbar {
-    border-radius: 18px !important;
+.progress {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-radius: 14px;
     overflow: hidden;
 }
 
-/* =========================
-   MUTED JUNGLE VINES (VISIBLE)
-========================= */
+.progress-bar {
+    border-radius: 14px;
+}
+
+/* ==================================================
+   LINKS
+================================================== */
+
+a {
+    color: #6faab0 !important;
+}
+
+a:hover {
+    color: #9fd0d6 !important;
+}
+
+/* ==================================================
+   MOOD TEXT (HAPPY / AWKWARD / FRIVOLOUS)
+================================================== */
+
+small.text-muted {
+    color: #6faab0 !important;
+    font-weight: 600;
+}
+
+/* ==================================================
+   POPUP / ALERT BOXES
+================================================== */
+
+.alert,
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger {
+    background: #9fc7cc !important;
+    color: #000000 !important;
+    border: none !important;
+    border-radius: 16px;
+}
+
+.alert a {
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+/* ==================================================
+   VINES — BOTTOM OF MAIN CONTENT
+================================================== */
 
 #main {
     position: relative;
@@ -255,50 +209,30 @@ a, button, input, select, textarea, label {
     pointer-events: none;
 }
 
-/* =========================
-   REAL RAIN EFFECT
-========================= */
+/* ==================================================
+   REALISTIC RAIN EFFECT
+================================================== */
 
 body::before {
     content: "";
     position: fixed;
-    top: -100%;
+    top: -200%;
     left: 0;
     width: 100%;
-    height: 300%;
+    height: 400%;
     pointer-events: none;
     background-image: repeating-linear-gradient(
         120deg,
         rgba(255,255,255,0.08),
         rgba(255,255,255,0.08) 1px,
         transparent 1px,
-        transparent 12px
+        transparent 14px
     );
-    animation: rainFall 0.9s linear infinite;
+    animation: jungleRain 0.9s linear infinite;
     opacity: 0.35;
 }
 
-@keyframes rainFall {
+@keyframes jungleRain {
     from { transform: translateY(0); }
-    to { transform: translateY(600px); }
-}
-
-/* =========================
-   POPUP / ALERT BOXES
-========================= */
-
-.alert,
-.alert-success,
-.alert-info,
-.alert-warning,
-.alert-danger {
-    background: #9fc7cc !important;
-    color: #000000 !important;
-    border: none !important;
-    border-radius: 14px;
-}
-
-.alert a {
-    color: #000000 !important;
-    font-weight: 600;
+    to { transform: translateY(700px); }
 }
