@@ -1,148 +1,105 @@
-/* ======================================================
-   JUNJUN DEN — DARK JUNGLE FRAME (FIXED)
-   ====================================================== */
+/* ==========================================
+   JunJun Jungle Overrides for Chris Layout
+   ========================================== */
 
-/* ---------- FONT ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
-
-/* ---------- BASE ---------- */
-body {
-  background: url("https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg")
-              center center / cover no-repeat fixed !important;
-  font-family: 'Nunito', sans-serif;
-  color: #eaeaea !important;
+/* ---------- COLOR VARIABLES ---------- */
+:root {
+  --jungle-dark: rgba(0, 0, 0, 0.75);
+  --jungle-darker: rgba(0, 0, 0, 0.85);
+  --teal-main: #2f6f73;
+  --teal-light: #7fd0d3;
+  --text-main: #ffffff;
 }
 
-/* ---------- REMOVE ALL DEFAULT WHITES & BORDERS ---------- */
-*, *::before, *::after {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none;
+/* ---------- GLOBAL TEXT ---------- */
+body, p, span, td, th, div {
+  color: var(--text-main) !important;
 }
 
-.container,
-#main,
-.row,
-.col-md-9,
-.col-md-3 {
-  background: transparent !important;
-}
-
-/* ---------- MAIN FRAME ---------- */
-#main .container {
-  position: relative;
-  padding: 30px !important;
-  margin: 24px auto 40px;
-}
-
-#main .container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 28px;
-  box-shadow: 0 28px 70px rgba(0,0,0,0.8);
-  z-index: -1;
-}
-
-/* ---------- TABLES: THIS IS THE BIG FIX ---------- */
-.table {
-  background: transparent !important;
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-}
-
+/* ---------- TABLE BACKGROUNDS (CRITICAL) ---------- */
+.table,
 .table tbody,
 .table tr,
 .table td,
 .table th {
-  background: rgba(0, 0, 0, 0.55) !important;
-  color: #eaeaea !important;
+  background: var(--jungle-dark) !important;
+  border: none !important;
 }
 
-/* Round table edges cleanly */
-.table tr:first-child td:first-child {
-  border-top-left-radius: 18px;
-}
-.table tr:first-child td:last-child {
-  border-top-right-radius: 18px;
-}
-.table tr:last-child td:first-child {
-  border-bottom-left-radius: 18px;
-}
-.table tr:last-child td:last-child {
-  border-bottom-right-radius: 18px;
-}
-
-/* ---------- SUBTLE DEPTH ---------- */
-.table {
-  margin-bottom: 18px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.table:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.7);
-}
-
-/* ---------- SIDEBAR ---------- */
+/* Sidebar slightly darker */
 .col-md-3 .table td,
 .col-md-3 .table th {
-  background: rgba(0, 0, 0, 0.6) !important;
+  background: var(--jungle-darker) !important;
+}
+
+/* Remove white outlines completely */
+.table *,
+.panel,
+.feature,
+.alert {
+  outline: none !important;
+  border: none !important;
+}
+
+/* ---------- ROUNDED EVERYTHING ---------- */
+.table,
+.panel,
+.feature,
+.alert {
+  border-radius: 18px !important;
+  overflow: hidden;
+}
+
+/* ---------- HOVER LIFT ---------- */
+.table:hover,
+.feature:hover {
+  transform: translateY(-4px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 14px 34px rgba(0,0,0,0.7);
 }
 
 /* ---------- HEADER ---------- */
 .navbar,
 .navbar-default {
   background: #000000 !important;
-  border-radius: 0 0 22px 22px;
 }
 
 .navbar a {
+  font-weight: 800 !important;
   color: #ffffff !important;
-  font-weight: 800;
 }
 
-/* ---------- TEXT ---------- */
-h1, h2, h3, h4 {
-  color: #ffffff !important;
-  font-weight: 800;
-}
-
-p, span {
-  color: #eaeaea !important;
-}
-
-/* Accent text with better contrast */
+/* ---------- ACCENT TEXT ---------- */
 .text-success,
 .text-info,
 .text-warning {
-  color: #7fd0d3 !important;
+  color: var(--teal-light) !important;
   font-weight: 700;
 }
 
 /* ---------- STATUS BARS ---------- */
 .progress {
   background: rgba(255,255,255,0.15) !important;
-  border-radius: 14px;
+  border-radius: 12px;
 }
 
 .progress-bar {
-  background-color: #2f6f73 !important;
+  background-color: var(--teal-main) !important;
 }
 
-/* ---------- ALL LIODEN BUTTONS (REAL FIX) ---------- */
+/* ---------- ALL LIODEN BUTTONS ---------- */
 .btn,
 .btn-success,
 .btn-primary,
 .btn-warning,
 .btn-info,
 a.btn,
-input[type="submit"] {
-  background: #2f6f73 !important;
+input[type="submit"],
+button {
+  background: var(--teal-main) !important;
   color: #ffffff !important;
-  border-radius: 18px !important;
-  font-weight: 600;
+  border-radius: 16px !important;
+  border: none !important;
 }
 
 .btn:hover,
@@ -152,26 +109,27 @@ input[type="submit"] {
 .btn-info:hover,
 a.btn:hover,
 input[type="submit"]:hover {
-  background: #6fbfc2 !important;
+  background: var(--teal-light) !important;
   color: #000000 !important;
 }
 
 /* ---------- LINKS ---------- */
 a {
-  color: #6fbfc2 !important;
+  color: var(--teal-light) !important;
 }
+
 a:hover {
   color: #a8e1e3 !important;
 }
 
-/* ---------- CURSOR ---------- */
+/* ---------- CUSTOM CURSOR ---------- */
 * {
   cursor: url("https://user1283764.github.io/JunJunRevamp2/Lioden%20Custom%20Cursor.png"), auto !important;
 }
 
-/* ---------- HUMAN MADE ICON (STRONG) ---------- */
+/* ---------- HUMAN MADE ICON ---------- */
 img[src*="human"],
 img[src*="made"],
-.footer img {
+footer img {
   filter: brightness(0) invert(1) !important;
 }
