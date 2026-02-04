@@ -4,69 +4,83 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
 
-* {
-    font-family: 'Nunito', sans-serif;
+html, body, * {
+    font-family: 'Nunito', sans-serif !important;
     color: #ffffff !important;
 }
 
 /* ==================================================
-   BACKGROUND + CURSOR
+   BACKGROUND & CURSOR
 ================================================== */
 
 body {
-    background: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg")
-        no-repeat center center fixed;
+    background-image: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     background-size: cover;
 
     cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), auto;
 }
 
-/* Force cursor on all interactables */
-a, button, input, select, textarea, label {
+a, button, input, select, textarea {
     cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
 }
 
 /* ==================================================
-   MAIN LAYOUT — UNIFIED TRANSPARENCY
+   MAIN CONTENT + SIDEBAR (TRUE TRANSPARENCY)
 ================================================== */
 
-#main,
-.container,
-.table,
-.table-responsive,
-.feature {
+#main {
     background: rgba(0, 0, 0, 0.45) !important;
-    border-radius: 18px;
-    border: none !important;
+    border-radius: 20px;
+    padding-bottom: 220px;
 }
 
-/* Remove sidebar separation */
-.col-md-3,
-.col-md-9 {
+.container,
+.col-md-9,
+.col-md-3 {
     background: transparent !important;
 }
 
 /* ==================================================
-   SIDEBAR BOXES
+   SIDEBAR TABLES (REMOVE WHITE COMPLETELY)
 ================================================== */
 
 .panel,
 .panel-heading,
-.panel-body {
-    background: #000000 !important;
+.panel-body,
+.sidebar,
+.col-md-3 .panel {
+    background: rgba(0, 0, 0, 0.45) !important;
     border: none !important;
-    border-radius: 16px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-radius: 18px;
 }
 
-.panel:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+/* kill leftover whites */
+.panel-heading *,
+.panel-body * {
+    background: transparent !important;
 }
 
 /* ==================================================
-   TABLE CELLS — REMOVE WHITE
+   ALL TABLES / BOXES
 ================================================== */
+
+.table,
+.feature,
+.table-responsive {
+    background: rgba(0, 0, 0, 0.45) !important;
+    border: none !important;
+    border-radius: 18px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.table:hover,
+.feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+}
 
 .table th,
 .table td {
@@ -75,29 +89,15 @@ a, button, input, select, textarea, label {
 }
 
 /* ==================================================
-   HOVER LIFT (ALL BOXES)
-================================================== */
-
-.table,
-.feature {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.table:hover,
-.feature:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
-}
-
-/* ==================================================
-   HEADER / NAV BAR
+   HEADER / NAVBAR (FIXED BUTTON ISSUE)
 ================================================== */
 
 .navbar,
 .navbar-default {
     background: #000000 !important;
     border: none !important;
-    border-radius: 18px !important;
+    border-radius: 20px !important;
+    margin-bottom: 20px;
     overflow: hidden;
 }
 
@@ -106,30 +106,35 @@ a, button, input, select, textarea, label {
     color: #ffffff !important;
 }
 
-/* ==================================================
-   BUTTONS — MUTED TEAL
-================================================== */
-
-.btn,
-.btn-default,
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger,
-.pagination > li > a,
-.pagination > li > span,
-input[type="submit"] {
-    background: #2f6f78 !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 14px;
-    transition: background 0.2s ease, transform 0.2s ease;
+/* ensure Lioden button isn't trapped */
+.navbar .btn,
+.navbar button {
+    position: relative !important;
+    top: 0 !important;
 }
 
+/* ==================================================
+   BUTTONS (ACTUAL LIODEN OVERRIDE)
+================================================== */
+
+button,
+.btn,
+input[type="submit"],
+input[type="button"],
+.pagination > li > a,
+.pagination > li > span {
+    background-color: #2f6f78 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 14px !important;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
 .btn:hover,
+input[type="submit"]:hover,
 .pagination > li > a:hover {
-    background: #6faab0 !important;
+    background-color: #6faab0 !important;
     transform: translateY(-2px);
 }
 
@@ -160,7 +165,7 @@ a:hover {
 }
 
 /* ==================================================
-   MOOD TEXT (HAPPY / AWKWARD / FRIVOLOUS)
+   MOOD TEXT
 ================================================== */
 
 small.text-muted {
@@ -169,7 +174,7 @@ small.text-muted {
 }
 
 /* ==================================================
-   POPUP / ALERT BOXES
+   POPUPS / ALERTS
 ================================================== */
 
 .alert,
@@ -180,59 +185,68 @@ small.text-muted {
     background: #9fc7cc !important;
     color: #000000 !important;
     border: none !important;
-    border-radius: 16px;
+    border-radius: 18px;
 }
 
-.alert a {
+.alert * {
     color: #000000 !important;
-    font-weight: 600;
 }
 
 /* ==================================================
-   VINES — BOTTOM OF MAIN CONTENT
+   HUMAN-MADE ICON (BOTTOM RIGHT)
 ================================================== */
 
-#main {
-    position: relative;
+img[src*="human-made"],
+img[src*="Human"],
+img[alt*="Human"] {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
+
+/* ==================================================
+   VINES (FOR REAL THIS TIME)
+================================================== */
 
 #main::after {
     content: "";
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 200px;
-    background: url("https://i.imgur.com/4ZQZ6zK.png") no-repeat center bottom;
+    height: 220px;
+    background-image: url("https://i.imgur.com/4ZQZ6zK.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
     background-size: contain;
-    opacity: 0.4;
+    opacity: 0.45;
     pointer-events: none;
 }
 
 /* ==================================================
-   REALISTIC RAIN EFFECT
+   RAIN EFFECT (VISIBLE + DIAGONAL)
 ================================================== */
 
 body::before {
     content: "";
     position: fixed;
-    top: -200%;
+    top: -100%;
     left: 0;
     width: 100%;
-    height: 400%;
+    height: 300%;
     pointer-events: none;
     background-image: repeating-linear-gradient(
         120deg,
-        rgba(255,255,255,0.08),
-        rgba(255,255,255,0.08) 1px,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.12) 1px,
         transparent 1px,
-        transparent 14px
+        transparent 10px
     );
-    animation: jungleRain 0.9s linear infinite;
+    animation: rainMove 0.7s linear infinite;
     opacity: 0.35;
+    z-index: 9999;
 }
 
-@keyframes jungleRain {
+@keyframes rainMove {
     from { transform: translateY(0); }
-    to { transform: translateY(700px); }
+    to { transform: translateY(800px); }
 }
