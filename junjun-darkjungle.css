@@ -1,0 +1,150 @@
+/*
+ Layout Made by Chris (#105465) — modified by JunJun (your fork)
+ Original CSS credit preserved as required.
+*/
+
+/* ---------- FONT IMPORT ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+
+/* ---------- BASE BACKGROUND ---------- */
+body {
+  font-family: "Nunito", sans-serif;
+  background: #000000 url('https://user1283764.github.io/JunJunRevamp2/vertical-shot-tree-with-dark-cloud.jpg') center center fixed no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+/* ---------- HEADERS ---------- */
+h1, h2, h3, .sidebar h3 {
+  color: #ffffff !important;
+  font-weight: 800;
+}
+
+/* ---------- GENERAL TEXT ---------- */
+p, b, #fraProfileContent, small {
+  color: #eaeaea !important;
+}
+
+/* ---------- LINKS ---------- */
+a:link,
+a:visited,
+a:active {
+  color: #7fd0d3 !important;
+  font-weight: 600;
+}
+a:hover,
+a:focus {
+  color: #a8e1e3 !important;
+}
+
+/* ---------- TOPBAR ---------- */
+.topbar {
+  background: #050505;
+  border: none;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background: #000000 !important;
+  border-bottom: 2px solid #2f6f73;
+  border-radius: 0 0 14px 14px;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #ffffff !important;
+  font-weight: bold;
+}
+
+/* ---------- MAIN PANELS ---------- */
+.main,
+.table,
+.panel,
+div.feature,
+.alert {
+  background: rgba(0,0,0,0.75) !important;
+  border-radius: 14px !important;
+  color: #eaeaea !important;
+  border: none !important;
+}
+
+/* Remove white container card look */
+.col-md-9,
+.col-md-3 {
+  background: none !important;
+}
+
+/* ---------- TABLE BODY CELLS ---------- */
+.table tbody,
+.table tr,
+.table td,
+.table th {
+  background: rgba(0,0,0,0.62) !important;
+  color: #eaeaea !important;
+}
+
+/* Round table corners */
+.table tr:first-child td:first-child { border-top-left-radius: 14px; }
+.table tr:first-child td:last-child  { border-top-right-radius: 14px; }
+.table tr:last-child  td:first-child { border-bottom-left-radius: 14px; }
+.table tr:last-child  td:last-child  { border-bottom-right-radius: 14px; }
+
+/* ---------- HOVER LIFT ---------- */
+.table:hover,
+div.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.7);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ---------- BUTTONS ---------- */
+.select-control,
+button.button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background: #2f6f73 !important;
+  color: #ffffff !important;
+  border-radius: 16px !important;
+  border: none !important;
+  font-weight: 700;
+}
+
+.select-control:hover,
+button.button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background: #7fd0d3 !important;
+  color: #000000 !important;
+}
+
+/* ---------- STATUS BARS ---------- */
+.progress {
+  background: rgba(255,255,255,0.15) !important;
+  border-radius: 14px;
+}
+.progress-bar {
+  background: #2f6f73 !important;
+}
+
+/* ---------- ALERTS ---------- */
+.alert-success,
+.alert-warning,
+.alert-danger {
+  background: #333333 !important;
+  color: #ffffff !important;
+  border-radius: 14px !important;
+}
+
+/* ---------- CUSTOM CURSOR ---------- */
+* {
+  cursor: url("https://user1283764.github.io/JunJunRevamp2/Lioden%20Custom%20Cursor.png"), auto !important;
+}
+
+/* ---------- HUMAN MADE ICON ---------- */
+img[src*="human"],
+img[src*="Human"],
+.footer img {
+  filter: brightness(0) invert(1) !important;
+}
