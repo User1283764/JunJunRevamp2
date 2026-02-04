@@ -1,155 +1,130 @@
 /* =========================
-   GLOBAL RESET
+   STRONGER TRANSPARENCY
 ========================= */
 
-body {
-    background: url("vertical-shot-tree-with-dark-cloud.jpg") center center fixed no-repeat;
-    background-size: cover;
-    color: #ffffff !important;
-    font-family: "Quicksand", "Segoe UI", sans-serif;
-    cursor: url("Lioden Custom Cursor.png"), auto;
+#main, .container,
+.table, .table-responsive, .feature {
+    background: rgba(0, 0, 0, 0.45) !important;
 }
 
 /* =========================
-   STATIC RAIN OVERLAY
+   REMOVE WHITE SIDEBAR / TABLE EDGES
 ========================= */
 
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url("https://i.imgur.com/6QJQZ7g.png") repeat;
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 1;
-}
-
-/* =========================
-   MAIN CONTENT + SIDEBAR
-========================= */
-
-#main, #sidebar {
-    position: relative;
-    z-index: 2;
-}
-
-#main > .container,
-#sidebar {
-    background: rgba(0, 0, 0, 0.55) !important;
-    border-radius: 14px;
-}
-
-/* =========================
-   REMOVE WHITE INNER PANELS
-========================= */
-
-.well,
-.panel,
-.panel-body {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* =========================
-   SIDEBAR TABLES
-========================= */
-
-#sidebar .panel {
-    background: rgba(0, 0, 0, 0.6) !important;
-    border-radius: 14px;
-    transition: transform 0.25s ease;
-}
-
-#sidebar .panel:hover {
-    transform: translateY(-4px);
-}
-
-/* =========================
-   HEADER BAR
-========================= */
-
-.navbar {
+.panel-heading,
+.panel-body,
+.table th,
+.table td {
     background: #000000 !important;
-    border-radius: 0 0 16px 16px;
-}
-
-.navbar a {
-    color: #ffffff !important;
-    font-weight: 700;
+    border: none !important;
 }
 
 /* =========================
-   BUTTONS (REAL LIODEN BUTTONS)
+   FULL BUTTON OVERRIDE
 ========================= */
 
 .btn,
-input[type="submit"] {
-    background: #2f6f73 !important;
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger,
+.pagination > li > a,
+.pagination > li > span {
+    background: #2f6f78 !important;
     color: #ffffff !important;
-    border-radius: 999px !important;
     border: none !important;
 }
 
 .btn:hover,
-input[type="submit"]:hover {
-    background: #8fbfc2 !important;
+.pagination > li > a:hover {
+    background: #6faab0 !important;
 }
 
 /* =========================
-   STATUS BARS
+   CUSTOM CURSOR — FORCE EVERYWHERE
 ========================= */
 
-.progress {
-    background: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 999px;
-}
-
-.progress-bar {
-    background: #2f6f73 !important;
-    border-radius: 999px;
+a, button, input, select, textarea, label {
+    cursor: url("https://raw.githubusercontent.com/user1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
 }
 
 /* =========================
-   MOOD TEXT
+   ROUNDED HEADER
 ========================= */
 
-.alert-info + p,
-p strong {
-    color: #8fbfc2 !important;
+.navbar {
+    border-radius: 18px !important;
+    overflow: hidden;
 }
 
 /* =========================
-   POPUP NOTIFICATIONS
+   MUTED JUNGLE VINES (VISIBLE)
 ========================= */
 
-.alert,
-.toast {
-    background: #9fcfd2 !important;
-    color: #000000 !important;
-    border-radius: 14px;
+#main {
+    position: relative;
 }
-
-/* =========================
-   VINES (BOTTOM OVERLAY)
-========================= */
 
 #main::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 0;
-    right: 0;
-    height: 140px;
-    background: url("https://i.imgur.com/1mVZ1ZC.png") bottom center repeat-x;
+    width: 100%;
+    height: 200px;
+    background: url("https://i.imgur.com/4ZQZ6zK.png") no-repeat center bottom;
+    background-size: contain;
     opacity: 0.4;
     pointer-events: none;
 }
 
 /* =========================
-   HUMAN MADE ICON
+   REAL RAIN EFFECT
 ========================= */
 
-img[src*="human"] {
-    filter: brightness(0) invert(1);
+body::before {
+    content: "";
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+        120deg,
+        rgba(255,255,255,0.08),
+        rgba(255,255,255,0.08) 1px,
+        transparent 1px,
+        transparent 12px
+    );
+    animation: rainFall 0.9s linear infinite;
+    opacity: 0.35;
 }
+
+@keyframes rainFall {
+    from { transform: translateY(0); }
+    to { transform: translateY(600px); }
+}
+
+/* =========================
+   POPUP / ALERT BOXES
+========================= */
+
+.alert,
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger {
+    background: #9fc7cc !important;
+    color: #000000 !important;
+    border: none !important;
+    border-radius: 14px;
+}
+
+.alert a {
+    color: #000000 !important;
+    font-weight: 600;
+}
+
