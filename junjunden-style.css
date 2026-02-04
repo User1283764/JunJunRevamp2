@@ -1,130 +1,116 @@
 /* =========================
-   STRONGER TRANSPARENCY
+   SAFE RESET / STABILITY BASE
+   (NO EXTERNAL TEXTURES)
 ========================= */
 
-#main, .container,
-.table, .table-responsive, .feature {
-    background: rgba(0, 0, 0, 0.45) !important;
+body {
+    background: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/vertical-shot-tree-with-dark-cloud.jpg")
+        center center fixed no-repeat;
+    background-size: cover;
+    color: #ffffff !important;
+    font-family: "Quicksand", "Segoe UI", sans-serif;
+    cursor: url("https://raw.githubusercontent.com/User1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), auto;
 }
 
 /* =========================
-   REMOVE WHITE SIDEBAR / TABLE EDGES
+   HEADER
 ========================= */
 
-.panel-heading,
-.panel-body,
-.table th,
-.table td {
+.navbar {
     background: #000000 !important;
-    border: none !important;
+    border-radius: 0 0 16px 16px;
+}
+
+.navbar a {
+    color: #ffffff !important;
+    font-weight: 700;
 }
 
 /* =========================
-   FULL BUTTON OVERRIDE
+   MAIN + SIDEBAR CONTAINERS
+========================= */
+
+#main,
+#sidebar {
+    background: rgba(0, 0, 0, 0.55) !important;
+    border-radius: 14px;
+}
+
+/* =========================
+   REMOVE BOOTSTRAP WHITES
+========================= */
+
+.well,
+.panel,
+.panel-body {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* =========================
+   SIDEBAR PANELS
+========================= */
+
+#sidebar .panel {
+    background: rgba(0, 0, 0, 0.65) !important;
+    border-radius: 14px;
+}
+
+/* =========================
+   BUTTONS
 ========================= */
 
 .btn,
-.btn-default,
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger,
-.pagination > li > a,
-.pagination > li > span {
-    background: #2f6f78 !important;
+input[type="submit"] {
+    background: #2f6f73 !important;
     color: #ffffff !important;
+    border-radius: 999px !important;
     border: none !important;
 }
 
 .btn:hover,
-.pagination > li > a:hover {
-    background: #6faab0 !important;
+input[type="submit"]:hover {
+    background: #8fbfc2 !important;
 }
 
 /* =========================
-   CUSTOM CURSOR — FORCE EVERYWHERE
+   STATUS BARS
 ========================= */
 
-a, button, input, select, textarea, label {
-    cursor: url("https://raw.githubusercontent.com/user1283764/JunJunRevamp2/main/Lioden%20Custom%20Cursor.png"), pointer !important;
+.progress {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-radius: 999px;
+}
+
+.progress-bar {
+    background: #2f6f73 !important;
+    border-radius: 999px;
 }
 
 /* =========================
-   ROUNDED HEADER
+   MOOD TEXT
 ========================= */
 
-.navbar {
-    border-radius: 18px !important;
-    overflow: hidden;
+p strong {
+    color: #8fbfc2 !important;
 }
 
 /* =========================
-   MUTED JUNGLE VINES (VISIBLE)
-========================= */
-
-#main {
-    position: relative;
-}
-
-#main::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: url("https://i.imgur.com/4ZQZ6zK.png") no-repeat center bottom;
-    background-size: contain;
-    opacity: 0.4;
-    pointer-events: none;
-}
-
-/* =========================
-   REAL RAIN EFFECT
-========================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 300%;
-    pointer-events: none;
-    background-image: repeating-linear-gradient(
-        120deg,
-        rgba(255,255,255,0.08),
-        rgba(255,255,255,0.08) 1px,
-        transparent 1px,
-        transparent 12px
-    );
-    animation: rainFall 0.9s linear infinite;
-    opacity: 0.35;
-}
-
-@keyframes rainFall {
-    from { transform: translateY(0); }
-    to { transform: translateY(600px); }
-}
-
-/* =========================
-   POPUP / ALERT BOXES
+   POPUPS
 ========================= */
 
 .alert,
-.alert-success,
-.alert-info,
-.alert-warning,
-.alert-danger {
-    background: #9fc7cc !important;
+.toast {
+    background: #9fcfd2 !important;
     color: #000000 !important;
-    border: none !important;
     border-radius: 14px;
 }
 
-.alert a {
-    color: #000000 !important;
-    font-weight: 600;
-}
+/* =========================
+   HUMAN MADE ICON
+========================= */
 
+img[src*="human"] {
+    filter: brightness(0) invert(1);
+}
